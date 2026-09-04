@@ -1,0 +1,6 @@
+{
+  "name": "Canada-EU Bridge",
+  "description": "A bilingual (English/French) informational bridge connecting Canada and the European Union across travel, investment, and strategic partnerships, featuring a scoped Gemini AI assistant.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
