@@ -215,9 +215,9 @@ export const ChatAssistant: React.FC<ChatAssistantProps> = ({
       </div>
 
       {/* Scoping Advisory Notice */}
-      <div className="bg-amber-50/90 border-b border-amber-200 px-3 py-1.5 flex items-center gap-2 text-[11px] text-amber-900">
-        <ShieldAlert className="w-3.5 h-3.5 text-amber-600 shrink-0" />
-        <span className="truncate">
+      <div className="bg-amber-50/90 border-b border-amber-200 px-3 py-1.5 flex items-start gap-2 text-[11px] text-amber-900">
+        <ShieldAlert className="w-3.5 h-3.5 text-amber-600 shrink-0 mt-0.5" />
+        <span className="break-words">
           {currentLang === "en"
             ? "Scoped exclusively to: Visit Canada, Invest in Canada, & Canada-EU Partnership."
             : "Limité strictement à : Visiter le Canada, Investir au Canada & Partenariat Canada-UE."}
@@ -284,8 +284,8 @@ export const ChatAssistant: React.FC<ChatAssistantProps> = ({
       </div>
 
       {/* Suggested Quick Prompts */}
-      <div className="bg-white border-t border-slate-200 px-3 py-2 overflow-x-auto">
-        <div className="flex items-center gap-1.5 text-[11px] whitespace-nowrap">
+      <div className="bg-white border-t border-slate-200 px-3 py-2">
+        <div className="flex flex-wrap items-center gap-1.5 text-[11px]">
           <span className="text-slate-400 font-semibold uppercase text-[10px] mr-1">
             <Sparkles className="w-3 h-3 text-amber-500 inline mr-0.5" />
             {currentLang === "en" ? "Suggestions:" : "Suggéré :"}

@@ -18,7 +18,7 @@ export const VisitSection: React.FC<VisitSectionProps> = ({ currentLang, onAskAb
         
         {/* Section Header */}
         <div className="max-w-3xl mb-12">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-100 border border-emerald-200 text-emerald-800 text-xs font-semibold uppercase tracking-wider mb-3">
+          <div className="inline-flex flex-wrap items-center justify-center gap-1.5 px-3 py-1 rounded-full bg-emerald-100 border border-emerald-200 text-emerald-800 text-xs font-semibold uppercase tracking-wider mb-3">
             <Compass className="w-3.5 h-3.5" />
             {t.badge}
           </div>
@@ -34,10 +34,10 @@ export const VisitSection: React.FC<VisitSectionProps> = ({ currentLang, onAskAb
         </div>
 
         {/* Navigation Tabs for Visit Section */}
-        <div className="flex border-b border-slate-200 gap-4 sm:gap-8 mb-8 overflow-x-auto pb-1">
+        <div className="flex flex-wrap border-b border-slate-200 gap-4 sm:gap-8 mb-8 pb-1">
           <button
             onClick={() => setActiveTab("destinations")}
-            className={`flex items-center gap-2 pb-3 text-sm font-semibold border-b-2 whitespace-nowrap transition-all ${
+            className={`flex items-center gap-2 pb-3 text-sm font-semibold border-b-2 transition-all ${
               activeTab === "destinations"
                 ? "border-emerald-600 text-emerald-700"
                 : "border-transparent text-slate-500 hover:text-slate-800 hover:border-slate-300"
@@ -48,7 +48,7 @@ export const VisitSection: React.FC<VisitSectionProps> = ({ currentLang, onAskAb
           </button>
           <button
             onClick={() => setActiveTab("eta")}
-            className={`flex items-center gap-2 pb-3 text-sm font-semibold border-b-2 whitespace-nowrap transition-all ${
+            className={`flex items-center gap-2 pb-3 text-sm font-semibold border-b-2 transition-all ${
               activeTab === "eta"
                 ? "border-emerald-600 text-emerald-700"
                 : "border-transparent text-slate-500 hover:text-slate-800 hover:border-slate-300"
@@ -59,7 +59,7 @@ export const VisitSection: React.FC<VisitSectionProps> = ({ currentLang, onAskAb
           </button>
           <button
             onClick={() => setActiveTab("tips")}
-            className={`flex items-center gap-2 pb-3 text-sm font-semibold border-b-2 whitespace-nowrap transition-all ${
+            className={`flex items-center gap-2 pb-3 text-sm font-semibold border-b-2 transition-all ${
               activeTab === "tips"
                 ? "border-emerald-600 text-emerald-700"
                 : "border-transparent text-slate-500 hover:text-slate-800 hover:border-slate-300"
@@ -153,14 +153,14 @@ export const VisitSection: React.FC<VisitSectionProps> = ({ currentLang, onAskAb
                 href="https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/eta.html"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-700 hover:bg-emerald-600 text-white text-xs sm:text-sm font-semibold transition-all shadow-xs"
+                className="inline-flex flex-wrap items-center justify-center gap-2 px-4 py-2 rounded-lg bg-emerald-700 hover:bg-emerald-600 text-white text-xs sm:text-sm font-semibold transition-all shadow-xs"
               >
                 <span>{currentLang === "en" ? "Official Government eTA Portal" : "Portail Officiel AVE du Canada"}</span>
                 <Compass className="w-3.5 h-3.5" />
               </a>
               <button
                 onClick={() => onAskAboutTravel?.(currentLang === "fr" ? "Quelles sont les formalités de l'AVE pour un citoyen français ou européen ?" : "What are the exact eTA requirements for an EU citizen traveling to Canada?")}
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-white border border-slate-300 hover:bg-slate-50 text-slate-800 text-xs sm:text-sm font-semibold transition-all shadow-2xs"
+                className="inline-flex flex-wrap items-center justify-center gap-1.5 px-4 py-2 rounded-lg bg-white border border-slate-300 hover:bg-slate-50 text-slate-800 text-xs sm:text-sm font-semibold transition-all shadow-2xs"
               >
                 <Sparkles className="w-4 h-4 text-emerald-600" />
                 <span>{currentLang === "en" ? "Ask Assistant about eTA" : "Interroger l'assistant sur l'AVE"}</span>

@@ -37,8 +37,8 @@ export const Footer: React.FC<FooterProps> = ({ currentLang, onToggleLang }) => 
             <p className="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-md">
               {t.brandDesc}
             </p>
-            <div className="flex items-center gap-3 text-xs text-slate-300">
-              <span className="flex items-center gap-1">
+            <div className="flex flex-wrap items-center gap-3 text-xs text-slate-300 min-w-0">
+              <span className="flex flex-wrap items-center gap-1">
                 <ShieldCheck className="w-4 h-4 text-emerald-400" />
                 CETA & SPA Information Compliant
               </span>
@@ -105,7 +105,7 @@ export const Footer: React.FC<FooterProps> = ({ currentLang, onToggleLang }) => 
                     href={link.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 hover:text-white transition-colors group"
+                    className="inline-flex flex-wrap items-center justify-center gap-1.5 hover:text-white transition-colors group"
                   >
                     <span>{link.label}</span>
                     <ExternalLink className="w-3 h-3 text-slate-500 group-hover:text-slate-300" />

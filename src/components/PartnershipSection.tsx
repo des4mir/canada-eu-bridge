@@ -18,7 +18,7 @@ export const PartnershipSection: React.FC<PartnershipSectionProps> = ({ currentL
         
         {/* Section Header */}
         <div className="max-w-3xl mb-12">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-100 border border-indigo-200 text-indigo-800 text-xs font-semibold uppercase tracking-wider mb-3">
+          <div className="inline-flex flex-wrap items-center justify-center gap-1.5 px-3 py-1 rounded-full bg-indigo-100 border border-indigo-200 text-indigo-800 text-xs font-semibold uppercase tracking-wider mb-3">
             <Handshake className="w-3.5 h-3.5" />
             {t.badge}
           </div>
@@ -34,10 +34,10 @@ export const PartnershipSection: React.FC<PartnershipSectionProps> = ({ currentL
         </div>
 
         {/* Navigation Tabs */}
-        <div className="flex border-b border-slate-200 gap-4 sm:gap-8 mb-8 overflow-x-auto pb-1">
+        <div className="flex flex-wrap border-b border-slate-200 gap-4 sm:gap-8 mb-8 pb-1">
           <button
             onClick={() => setActiveTab("pillars")}
-            className={`flex items-center gap-2 pb-3 text-sm font-semibold border-b-2 whitespace-nowrap transition-all ${
+            className={`flex items-center gap-2 pb-3 text-sm font-semibold border-b-2 transition-all ${
               activeTab === "pillars"
                 ? "border-indigo-600 text-indigo-700"
                 : "border-transparent text-slate-500 hover:text-slate-800 hover:border-slate-300"
@@ -48,7 +48,7 @@ export const PartnershipSection: React.FC<PartnershipSectionProps> = ({ currentL
           </button>
           <button
             onClick={() => setActiveTab("milestones")}
-            className={`flex items-center gap-2 pb-3 text-sm font-semibold border-b-2 whitespace-nowrap transition-all ${
+            className={`flex items-center gap-2 pb-3 text-sm font-semibold border-b-2 transition-all ${
               activeTab === "milestones"
                 ? "border-indigo-600 text-indigo-700"
                 : "border-transparent text-slate-500 hover:text-slate-800 hover:border-slate-300"
@@ -120,7 +120,7 @@ export const PartnershipSection: React.FC<PartnershipSectionProps> = ({ currentL
                   </p>
                   <button
                     onClick={() => onAskAboutPartnership?.(`${currentLang === "fr" ? "Explique le jalon historique : " : "Explain the historical milestone: "} ${milestone.year} - ${milestone.title}`)}
-                    className="mt-3 text-xs font-semibold text-indigo-700 hover:text-indigo-900 inline-flex items-center gap-1 transition-colors"
+                    className="mt-3 text-xs font-semibold text-indigo-700 hover:text-indigo-900 inline-flex flex-wrap items-center justify-center gap-1 transition-colors"
                   >
                     <Sparkles className="w-3 h-3" />
                     <span>{currentLang === "en" ? "Explore details via Assistant" : "Explorer les détails avec l'assistant"}</span>

@@ -39,7 +39,7 @@ export const NewsSection: React.FC<NewsSectionProps> = ({ currentLang, onAskAbou
         {/* Header with clear static content notice */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
           <div>
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-purple-100 border border-purple-200 text-purple-800 text-xs font-semibold uppercase tracking-wider mb-2">
+            <div className="inline-flex flex-wrap items-center justify-center gap-1.5 px-3 py-1 rounded-full bg-purple-100 border border-purple-200 text-purple-800 text-xs font-semibold uppercase tracking-wider mb-2">
               <Newspaper className="w-3.5 h-3.5" />
               {t.news.title}
             </div>
@@ -52,7 +52,7 @@ export const NewsSection: React.FC<NewsSectionProps> = ({ currentLang, onAskAbou
           </div>
 
           {/* Static Content Edit Indicator badge */}
-          <div className="inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-white border border-slate-200 shadow-xs text-xs text-slate-600">
+          <div className="inline-flex flex-wrap items-center justify-center gap-2 px-3 py-2 rounded-xl bg-white border border-slate-200 shadow-xs text-xs text-slate-600">
             <FileCode2 className="w-4 h-4 text-purple-600 shrink-0" />
             <span>
               <strong className="text-slate-800 font-semibold">{currentLang === "en" ? "Static Data File:" : "Fichier de données statiques :"}</strong>{" "}
@@ -128,14 +128,14 @@ export const NewsSection: React.FC<NewsSectionProps> = ({ currentLang, onAskAbou
                 </div>
 
                 {/* Footer source & Ask Assistant link */}
-                <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between gap-3 text-xs">
-                  <span className="text-slate-500 italic truncate max-w-[200px] sm:max-w-none">
+                <div className="mt-6 pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3 text-xs min-w-0">
+                  <span className="text-slate-500 italic break-words min-w-0 flex-1">
                     {item.source}
                   </span>
                   {onAskAboutNews && (
                     <button
                       onClick={() => onAskAboutNews(title)}
-                      className="inline-flex items-center gap-1 font-semibold text-purple-700 hover:text-purple-900 transition-colors shrink-0"
+                      className="inline-flex flex-wrap items-center justify-center gap-1 font-semibold text-purple-700 hover:text-purple-900 transition-colors shrink-0"
                     >
                       <span>{currentLang === "en" ? "Ask AI Assistant" : "Interroger l'assistant"}</span>
                       <ArrowUpRight className="w-3.5 h-3.5" />

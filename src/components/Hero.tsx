@@ -30,7 +30,7 @@ export const Hero: React.FC<HeroProps> = ({ currentLang, onOpenChatWithTopic }) 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Bilateral Tag Badge */}
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-800/80 border border-slate-700/80 text-xs sm:text-sm font-medium text-slate-300 mb-6 backdrop-blur-sm shadow-sm">
+        <div className="inline-flex flex-wrap items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-800/80 border border-slate-700/80 text-xs sm:text-sm font-medium text-slate-300 mb-6 backdrop-blur-sm shadow-sm">
           <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
           <span>{t.hero.badge}</span>
           <span className="text-slate-500">|</span>
@@ -54,7 +54,7 @@ export const Hero: React.FC<HeroProps> = ({ currentLang, onOpenChatWithTopic }) 
         <div className="mt-8 flex flex-wrap items-center gap-3 sm:gap-4">
           <button
             onClick={() => scrollToSection("visit")}
-            className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-sm transition-all shadow-sm hover:shadow-md active:scale-95"
+            className="inline-flex flex-wrap items-center justify-center gap-2 px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-sm transition-all shadow-sm hover:shadow-md active:scale-95"
           >
             <Compass className="w-4 h-4" />
             {t.hero.ctaVisit}
@@ -62,7 +62,7 @@ export const Hero: React.FC<HeroProps> = ({ currentLang, onOpenChatWithTopic }) 
 
           <button
             onClick={() => scrollToSection("invest")}
-            className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm transition-all shadow-sm hover:shadow-md active:scale-95"
+            className="inline-flex flex-wrap items-center justify-center gap-2 px-5 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm transition-all shadow-sm hover:shadow-md active:scale-95"
           >
             <TrendingUp className="w-4 h-4" />
             {t.hero.ctaInvest}
@@ -70,7 +70,7 @@ export const Hero: React.FC<HeroProps> = ({ currentLang, onOpenChatWithTopic }) 
 
           <button
             onClick={() => onOpenChatWithTopic?.(currentLang === "fr" ? "Comment se déroule le partenariat entre le Canada et l'UE ?" : "How does the partnership between Canada and the EU work?")}
-            className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white font-semibold text-sm border border-slate-700 transition-all shadow-sm active:scale-95"
+            className="inline-flex flex-wrap items-center justify-center gap-2 px-5 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white font-semibold text-sm border border-slate-700 transition-all shadow-sm active:scale-95"
           >
             <Sparkles className="w-4 h-4 text-amber-400" />
             {t.hero.ctaChat}
