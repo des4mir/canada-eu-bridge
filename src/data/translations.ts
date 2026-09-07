@@ -192,7 +192,7 @@ export const translations = {
       quickSuggestionsTitle: "Suggested Questions:",
     },
     disclaimer: {
-      text: "This is an independent, unofficial informational project and is not affiliated with, endorsed by, or representative of the Government of Canada, the European Union, or any government agency. Information here may be outdated or incomplete. For accurate, up-to-date, and official information, please consult Canada.ca, the European Commission's official site, or your relevant embassy/consulate.",
+      text: "This is an independent, unofficial informational project and is not affiliated with, endorsed by, or representative of the Government of Canada, the European Union, or any government agency. For accurate, up-to-date, and official information, please consult Canada.ca, the European Commission's official site, or your relevant embassy/consulate.",
       dismiss: "Dismiss notice",
     },
     footer: {
@@ -401,7 +401,7 @@ export const translations = {
       quickSuggestionsTitle: "Questions suggérées :",
     },
     disclaimer: {
-      text: "Ce projet d'information est indépendant et non officiel, et n'est ni affilié à, ni approuvé par, ni représentatif du gouvernement du Canada, de l'Union européenne ou de toute agence gouvernementale. Les informations présentées ici peuvent être obsolètes ou incomplètes. Pour des informations précises, à jour et officielles, veuillez consulter Canada.ca, le site officiel de la Commission européenne, ou votre ambassade/consulat concerné.",
+      text: "Ce projet d'information est indépendant et non officiel, et n'est ni affilié à, ni approuvé par, ni représentatif du gouvernement du Canada, de l'Union européenne ou de toute agence gouvernementale. Pour des informations précises, à jour et officielles, veuillez consulter Canada.ca, le site officiel de la Commission européenne, ou votre ambassade/consulat concerné.",
       dismiss: "Fermer l'avis",
     },
     footer: {
