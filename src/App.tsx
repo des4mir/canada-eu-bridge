@@ -9,6 +9,7 @@ import { InvestSection } from "./components/InvestSection";
 import { PartnershipSection } from "./components/PartnershipSection";
 import { Footer } from "./components/Footer";
 import { ChatAssistant } from "./components/ChatAssistant";
+import { DisclaimerBanner } from "./components/DisclaimerBanner";
 import { translations } from "./data/translations";
 
 export default function App() {
@@ -49,6 +50,8 @@ export default function App() {
         onToggleLang={handleToggleLang}
         onOpenChat={() => setIsChatOpen(true)}
       />
+
+      <DisclaimerBanner currentLang={currentLang} />
 
       <main className="flex-1">
         {/* Transatlantic Hero Banner */}

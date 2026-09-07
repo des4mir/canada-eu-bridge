@@ -124,7 +124,7 @@ app.post("/api/chat", async (req: Request, res: Response) => {
       : "\nNote: User's UI language is currently set to English. Please respond in English unless they explicitly asked in French.";
 
     const response = await ai.models.generateContent({
-      model: "gemini-3.8-flash",
+      model: "gemini-2.5-flash",
       contents,
       config: {
         systemInstruction: SYSTEM_INSTRUCTION + langDirective,

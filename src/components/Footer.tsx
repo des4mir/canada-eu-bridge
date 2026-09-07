@@ -2,6 +2,7 @@ import React from "react";
 import { ExternalLink, ShieldCheck, Globe } from "lucide-react";
 import { Language } from "../types";
 import { translations } from "../data/translations";
+import { DisclaimerBanner } from "./DisclaimerBanner";
 
 interface FooterProps {
   currentLang: Language;
@@ -21,6 +22,7 @@ export const Footer: React.FC<FooterProps> = ({ currentLang, onToggleLang }) => 
 
   return (
     <footer className="bg-slate-950 text-slate-400 text-sm border-t border-slate-800">
+      <DisclaimerBanner currentLang={currentLang} variant="dark" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           
