@@ -1,7 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="100%" height="100%">
   <!-- Minimal connecting bridge arc -->
-  <path d="M 276 720 Q 524 880 772 720" fill="none" stroke="#64748B" stroke-width="28" stroke-linecap="round" />
-  
   <!-- Canada: Exact 11-point official maple leaf silhouette -->
   <g transform="translate(276, 460) scale(0.10) translate(-4800, -2415)">
     <path fill="#D80621" d="M 4890 4430 l -45 -863 a 95 95 0 0 1 111 -98 l 859 151 l -116 -320 a 65 65 0 0 1 20 -73 l 941 -762 l -212 -99 a 65 65 0 0 1 -34 -79 l 186 -572 l -542 115 a 65 65 0 0 1 -73 -38 l -105 -247 l -423 454 a 65 65 0 0 1 -111 -57 l 204 -1052 l -327 189 a 65 65 0 0 1 -91 -27 l -332 -652 l -332 652 a 65 65 0 0 1 -91 27 l -327 -189 l 204 1052 a 65 65 0 0 1 -111 57 l -423 -454 l -105 247 a 65 65 0 0 1 -73 38 l -542 -115 l 186 572 a 65 65 0 0 1 -34 79 l -212 99 l 941 762 a 65 65 0 0 1 20 73 l -116 320 l 859 -151 a 95 95 0 0 1 111 98 l -45 863 z" />
