@@ -19,7 +19,9 @@ function getGeminiClient(): GoogleGenAI {
   if (!geminiClient) {
     const apiKey = process.env.GEMINI_API_KEY;
     if (!apiKey) {
-      throw new Error("GEMINI_API_KEY is not configured in server environment.");
+      throw new Error(
+        "GEMINI_API_KEY is not configured in server environment.",
+      );
     }
     geminiClient = new GoogleGenAI({
       apiKey,
@@ -33,7 +35,7 @@ function getGeminiClient(): GoogleGenAI {
   return geminiClient;
 }
 
-const SYSTEM_INSTRUCTION = `You are the official bilingual (English and French) AI assistant for the 'Canada-EU Bridge' (Pont Canada-UE) informational platform.
+const SYSTEM_INSTRUCTION = `You are the AI assistant for the Canada-EU Bridge platform.
 
 YOUR SCOPE IS STRICTLY CONFINED TO THREE TOPICS:
 1. Visit Canada:
@@ -73,7 +75,12 @@ app.get("/api/health", (_req: Request, res: Response) => {
 const chatLimiter = rateLimit({
   windowMs: 60 * 60 * 1000, // 1 hour window
   max: 30, // Limit each IP to 30 chat requests per window (to control Gemini API costs)
-  message: { error: { message: "Too many requests from this IP. Please try again after an hour." } },
+  message: {
+    error: {
+      message:
+        "Too many requests from this IP. Please try again after an hour.",
+    },
+  },
   standardHeaders: true,
   legacyHeaders: false,
 });
@@ -83,7 +90,9 @@ app.post("/api/chat", chatLimiter, async (req: Request, res: Response) => {
     const { messages, userMessage, language } = req.body;
 
     if (!userMessage && (!messages || messages.length === 0)) {
-      return res.status(400).json({ error: { message: "No message was provided in the request body." } });
+      return res.status(400).json({
+        error: { message: "No message was provided in the request body." },
+      });
     }
 
     if (!process.env.GEMINI_API_KEY) {
@@ -101,12 +110,14 @@ app.post("/api/chat", chatLimiter, async (req: Request, res: Response) => {
     const ai = getGeminiClient();
 
     // Prepare contents formatted for gemini-3.8-flash
-    const contents: Array<{ role: string; parts: Array<{ text: string }> }> = [];
+    const contents: Array<{ role: string; parts: Array<{ text: string }> }> =
+      [];
 
     if (Array.isArray(messages)) {
       // Add previous chat turns
       for (const msg of messages) {
-        const role = msg.role === "assistant" || msg.role === "model" ? "model" : "user";
+        const role =
+          msg.role === "assistant" || msg.role === "model" ? "model" : "user";
         const text = msg.content || msg.text || "";
         if (text.trim()) {
           contents.push({
@@ -120,7 +131,11 @@ app.post("/api/chat", chatLimiter, async (req: Request, res: Response) => {
     // Append current user message if not already included in messages array
     if (userMessage) {
       const lastContent = contents[contents.length - 1];
-      if (!lastContent || lastContent.role !== "user" || lastContent.parts[0]?.text !== userMessage) {
+      if (
+        !lastContent ||
+        lastContent.role !== "user" ||
+        lastContent.parts[0]?.text !== userMessage
+      ) {
         contents.push({
           role: "user",
           parts: [{ text: userMessage }],
@@ -128,9 +143,10 @@ app.post("/api/chat", chatLimiter, async (req: Request, res: Response) => {
       }
     }
 
-    const langDirective = language === "fr"
-      ? "\nNote: User's UI language is currently set to French. Please respond in French unless they explicitly asked in English."
-      : "\nNote: User's UI language is currently set to English. Please respond in English unless they explicitly asked in French.";
+    const langDirective =
+      language === "fr"
+        ? "\nNote: User's UI language is currently set to French. Please respond in French unless they explicitly asked in English."
+        : "\nNote: User's UI language is currently set to English. Please respond in English unless they explicitly asked in French.";
 
     const response = await ai.models.generateContent({
       model: "gemini-2.5-flash",
@@ -141,12 +157,18 @@ app.post("/api/chat", chatLimiter, async (req: Request, res: Response) => {
       },
     });
 
-    const reply = response.text || (language === "fr" ? "Désolé, aucune réponse n'a été générée." : "I'm sorry, no response could be generated.");
+    const reply =
+      response.text ||
+      (language === "fr"
+        ? "Désolé, aucune réponse n'a été générée."
+        : "I'm sorry, no response could be generated.");
 
     return res.json({ reply });
   } catch (error: any) {
     console.error("Backend Gemini Proxy Error:", error);
-    const errorMessage = error?.message || "Internal server error occurred while communicating with Gemini.";
+    const errorMessage =
+      error?.message ||
+      "Internal server error occurred while communicating with Gemini.";
     return res.status(500).json({
       error: {
         message: errorMessage,
@@ -167,42 +189,52 @@ const NEWS_CACHE_DURATION = 30 * 60 * 1000; // 30 minutes
 app.get("/api/news", async (req: Request, res: Response) => {
   try {
     // Return cached data if valid
-    if (newsCache && (Date.now() - newsCache.timestamp < NEWS_CACHE_DURATION)) {
+    if (newsCache && Date.now() - newsCache.timestamp < NEWS_CACHE_DURATION) {
       return res.json({ articles: newsCache.data });
     }
 
     const apiKey = process.env.NEWS_API_KEY;
     if (!apiKey) {
       // Return 503 if API key is not configured so frontend can fallback
-      return res.status(503).json({ error: "NEWS_API_KEY is not configured in server environment." });
+      return res.status(503).json({
+        error: "NEWS_API_KEY is not configured in server environment.",
+      });
     }
 
     // GNews API endpoint fetching specific relevant topics
-    const searchQuery = encodeURIComponent('"Canada tourism" OR "Canada EU trade" OR "CETA" OR "Canada foreign investment"');
+    const searchQuery = encodeURIComponent(
+      '"Canada tourism" OR "Canada EU trade" OR "CETA" OR "Canada foreign investment"',
+    );
     const url = `https://gnews.io/api/v4/search?q=${searchQuery}&lang=en&max=4&apikey=${apiKey}`;
-    
+
     const response = await fetch(url);
     let data;
     try {
       data = await response.json();
     } catch (e) {
       console.error("Failed to parse JSON from GNews API");
-      return res.status(500).json({ error: "Failed to fetch articles from news provider (Invalid JSON)" });
+      return res.status(500).json({
+        error: "Failed to fetch articles from news provider (Invalid JSON)",
+      });
     }
-    
+
     if (data.articles) {
       newsCache = {
         timestamp: Date.now(),
-        data: data.articles
+        data: data.articles,
       };
       return res.json({ articles: data.articles });
     } else {
       console.error("GNews API response error:", data);
-      return res.status(500).json({ error: "Failed to fetch articles from news provider" });
+      return res
+        .status(500)
+        .json({ error: "Failed to fetch articles from news provider" });
     }
   } catch (error: any) {
     console.error("Backend News API Proxy Error:", error);
-    return res.status(500).json({ error: "Internal server error while fetching news." });
+    return res
+      .status(500)
+      .json({ error: "Internal server error while fetching news." });
   }
 });
 

@@ -187,7 +187,7 @@ export const ChatAssistant: React.FC<ChatAssistantProps> = ({
                 Gemini
               </span>
             </div>
-            <p className="text-sm text-blue-200 font-normal">
+            <p className="text-sm text-blue-200 font-medium">
               {t.badge}
             </p>
           </div>

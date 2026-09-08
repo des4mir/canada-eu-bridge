@@ -3,7 +3,8 @@ import { QuickPrompt } from "../types";
 export const translations = {
   en: {
     siteTitle: "Canada-EU Bridge",
-    siteSubtitle: "Transatlantic Gateway for Tourism, Investment & Strategic Partnership",
+    siteSubtitle:
+      "Transatlantic Gateway for Tourism, Investment & Strategic Partnership",
     nav: {
       visit: "Visit Canada",
       invest: "Invest in Canada",
@@ -12,41 +13,80 @@ export const translations = {
       chat: "Bridge Assistant",
     },
     hero: {
-      badge: "Official Bilateral Information Portal",
+      badge: "Independent Bilateral Information Portal",
       title: "Connecting Canada and the European Union",
-      subtitle: "A modern informational bridge highlighting transatlantic tourism, business investment under CETA, and our historic strategic partnership for a sustainable, democratic world.",
+      subtitle:
+        "A modern informational bridge highlighting transatlantic tourism, business investment under CETA, and our historic strategic partnership for a sustainable, democratic world.",
       ctaVisit: "Plan Your Visit",
       ctaInvest: "Explore Investment",
       ctaChat: "Ask Bridge Assistant",
       stats: [
-        { label: "Bilateral Trade", value: "€75B+", sub: "Under CETA agreement" },
-        { label: "EU Citizen Entry", value: "eTA", sub: "Online in minutes, $7 CAD" },
-        { label: "Research Program", value: "Horizon Europe", sub: "Pillar II Association" },
-        { label: "Tariff-Free Goods", value: "98%", sub: "Immediate customs relief" },
+        {
+          label: "Bilateral Trade",
+          value: "€75B+",
+          sub: "Under CETA agreement",
+        },
+        {
+          label: "EU Citizen Entry",
+          value: "eTA",
+          sub: "Online in minutes, $7 CAD",
+        },
+        {
+          label: "Research Program",
+          value: "Horizon Europe",
+          sub: "Pillar II Association",
+        },
+        {
+          label: "Tariff-Free Goods",
+          value: "98%",
+          sub: "Immediate customs relief",
+        },
       ],
     },
     news: {
       title: "News Highlights",
-      subtitle: "Transatlantic updates on commerce, bilateral agreements, aviation routes, and collaborative innovation.",
-      editNotice: "Static Content: You can edit or add news items directly in src/data/news.ts.",
+      subtitle:
+        "Transatlantic updates on commerce, bilateral agreements, aviation routes, and collaborative innovation.",
+      editNotice:
+        "Static Content: You can edit or add news items directly in src/data/news.ts.",
       source: "Official Source",
       readMore: "Key Highlights",
     },
     visit: {
       title: "Visit Canada",
       badge: "Travel & Tourism",
-      tagline: "Experience breathtaking wilderness, cosmopolitan culture, and visa-free travel for European passport holders.",
-      overview: "Canada warmly welcomes European visitors. As citizens of EU member states, travelers enjoy visa-exempt entry for tourism or business visits of up to six months. You simply need an Electronic Travel Authorization (eTA) before boarding your flight.",
+      tagline:
+        "Experience breathtaking wilderness, cosmopolitan culture, and visa-free travel for European passport holders.",
+      overview:
+        "Canada warmly welcomes European visitors. As citizens of EU member states, travelers enjoy visa-exempt entry for tourism or business visits of up to six months. You simply need an Electronic Travel Authorization (eTA) before boarding your flight.",
       etaBox: {
         title: "eTA Requirements for EU Citizens",
-        summary: "An Electronic Travel Authorization (eTA) is electronically linked to your passport and valid for up to 5 years (or until passport expiry).",
+        summary:
+          "An Electronic Travel Authorization (eTA) is electronically linked to your passport and valid for up to 5 years (or until passport expiry).",
         steps: [
-          { step: "1", title: "Valid Passport", desc: "Must be a biometric passport from an EU member state." },
-          { step: "2", title: "Online Application", desc: "Takes ~5 minutes on the official Government of Canada portal (canada.ca)." },
-          { step: "3", title: "Nominal Fee", desc: "Costs only $7 CAD (~€4.80) paid by credit card." },
-          { step: "4", title: "Instant Approval", desc: "Most applications are automatically approved via email within minutes." },
+          {
+            step: "1",
+            title: "Valid Passport",
+            desc: "Must be a biometric passport from an EU member state.",
+          },
+          {
+            step: "2",
+            title: "Online Application",
+            desc: "Takes ~5 minutes on the official Government of Canada portal (canada.ca).",
+          },
+          {
+            step: "3",
+            title: "Nominal Fee",
+            desc: "Costs only $7 CAD (~€4.80) paid by credit card.",
+          },
+          {
+            step: "4",
+            title: "Instant Approval",
+            desc: "Most applications are automatically approved via email within minutes.",
+          },
         ],
-        warning: "Always use the official Government of Canada site (canada.ca) to avoid third-party markups.",
+        warning:
+          "Always use the official Government of Canada site (canada.ca) to avoid third-party markups.",
       },
       destinations: [
         {
@@ -87,16 +127,27 @@ export const translations = {
         },
       ],
       tips: [
-        { title: "Direct Flights", desc: "Nonstop flights operate daily between Paris, Frankfurt, London, Amsterdam, Dublin, Rome and Montreal/Toronto/Vancouver." },
-        { title: "Currency & Cards", desc: "Canadian Dollar ($ CAD). Contactless payment and European credit cards (Visa/Mastercard) are accepted everywhere." },
-        { title: "Best Travel Seasons", desc: "Summer (June–Sept) for hiking and lakes; Autumn (Sept–Oct) for spectacular foliage; Winter (Dec–March) for snow and aurora." },
+        {
+          title: "Direct Flights",
+          desc: "Nonstop flights operate daily between Paris, Frankfurt, London, Amsterdam, Dublin, Rome and Montreal/Toronto/Vancouver.",
+        },
+        {
+          title: "Currency & Cards",
+          desc: "Canadian Dollar ($ CAD). Contactless payment and European credit cards (Visa/Mastercard) are accepted everywhere.",
+        },
+        {
+          title: "Best Travel Seasons",
+          desc: "Summer (June–Sept) for hiking and lakes; Autumn (Sept–Oct) for spectacular foliage; Winter (Dec–March) for snow and aurora.",
+        },
       ],
     },
     invest: {
       title: "Invest in Canada",
       badge: "Trade & Economic Opportunities",
-      tagline: "Your North American launchpad with low corporate taxes, preferential EU market access via CETA, and top-tier talent.",
-      overview: "Canada offers European corporations one of the world's most stable, predictable, and innovative business environments. Under CETA, European businesses enjoy preferred investor protections and tariff elimination across virtually all product lines.",
+      tagline:
+        "Your North American launchpad with low corporate taxes, preferential EU market access via CETA, and top-tier talent.",
+      overview:
+        "Canada offers European corporations one of the world's most stable, predictable, and innovative business environments. Under CETA, European businesses enjoy preferred investor protections and tariff elimination across virtually all product lines.",
       cetaBenefits: [
         {
           title: "98% Tariff Elimination",
@@ -138,16 +189,27 @@ export const translations = {
         },
       ],
       advantages: [
-        { title: "Lowest Net Debt-to-GDP in G7", desc: "Fiscal discipline ensuring economic resilience and steady sovereign credit ratings." },
-        { title: "Global Skills Strategy", desc: "Fast-track 2-week processing for highly skilled international workers and engineers." },
-        { title: "R&D Tax Incentives (SR&ED)", desc: "Generous tax credits and cash refunds for scientific research and experimental development." },
+        {
+          title: "Lowest Net Debt-to-GDP in G7",
+          desc: "Fiscal discipline ensuring economic resilience and steady sovereign credit ratings.",
+        },
+        {
+          title: "Global Skills Strategy",
+          desc: "Fast-track 2-week processing for highly skilled international workers and engineers.",
+        },
+        {
+          title: "R&D Tax Incentives (SR&ED)",
+          desc: "Generous tax credits and cash refunds for scientific research and experimental development.",
+        },
       ],
     },
     partnership: {
       title: "Canada-EU Partnership",
       badge: "Diplomacy, Security & Shared Values",
-      tagline: "A strategic alliance bound by common democratic values, rules-based international order, and joint climate leadership.",
-      overview: "The relationship between Canada and the European Union is built on mutual trust, shared historical bonds, and deep commitment to peace, human rights, and sustainable development. Formalized by the Strategic Partnership Agreement (SPA) and CETA, the alliance tackles 21st-century challenges together.",
+      tagline:
+        "A strategic alliance bound by common democratic values, rules-based international order, and joint climate leadership.",
+      overview:
+        "The relationship between Canada and the European Union is built on mutual trust, shared historical bonds, and deep commitment to peace, human rights, and sustainable development. Formalized by the Strategic Partnership Agreement (SPA) and CETA, the alliance tackles 21st-century challenges together.",
       pillars: [
         {
           title: "Strategic Partnership Agreement (SPA)",
@@ -167,19 +229,41 @@ export const translations = {
         },
       ],
       milestones: [
-        { year: "1976", title: "Framework Agreement", desc: "First formal bilateral cooperation agreement signed between Canada and the European Communities." },
-        { year: "2016", title: "Signing of CETA & SPA", desc: "Historic signature of the Comprehensive Economic and Trade Agreement and the Strategic Partnership Agreement." },
-        { year: "2017", title: "Provisional Application of CETA", desc: "Bilateral tariffs eliminated on 98% of trade lines, initiating rapid transatlantic commerce expansion." },
-        { year: "2021", title: "Strategic Partnership on Raw Materials", desc: "Bilateral accord focused on integrating critical raw materials supply chains between Canada and the EU." },
-        { year: "2024–2026", title: "Horizon Europe Association", desc: "Canada formally joins Horizon Europe Pillar II, opening transatlantic collaborative research funding." },
+        {
+          year: "1976",
+          title: "Framework Agreement",
+          desc: "First formal bilateral cooperation agreement signed between Canada and the European Communities.",
+        },
+        {
+          year: "2016",
+          title: "Signing of CETA & SPA",
+          desc: "Historic signature of the Comprehensive Economic and Trade Agreement and the Strategic Partnership Agreement.",
+        },
+        {
+          year: "2017",
+          title: "Provisional Application of CETA",
+          desc: "Bilateral tariffs eliminated on 98% of trade lines, initiating rapid transatlantic commerce expansion.",
+        },
+        {
+          year: "2021",
+          title: "Strategic Partnership on Raw Materials",
+          desc: "Bilateral accord focused on integrating critical raw materials supply chains between Canada and the EU.",
+        },
+        {
+          year: "2024–2026",
+          title: "Horizon Europe Association",
+          desc: "Canada formally joins Horizon Europe Pillar II, opening transatlantic collaborative research funding.",
+        },
       ],
     },
     chat: {
       title: "Bridge Assistant",
       subtitle: "Gemini-powered AI assistant",
       badge: "Scoped to Visit, Invest & Partnership",
-      greeting: "Hello! I am your Canada-EU Bridge AI assistant. I can answer questions about Visiting Canada (eTA, destinations, tips), Investing in Canada (CETA, key sectors, incentives), and the Canada-EU Partnership. How may I assist you today?",
-      inputPlaceholder: "Ask about travel, investing, or the Canada-EU partnership...",
+      greeting:
+        "Hello! I am your Canada-EU Bridge AI assistant. I can answer questions about Visiting Canada (eTA, destinations, tips), Investing in Canada (CETA, key sectors, incentives), and the Canada-EU Partnership. How may I assist you today?",
+      inputPlaceholder:
+        "Ask about travel, investing, or the Canada-EU partnership...",
       send: "Send",
       clear: "Clear",
       open: "Ask Bridge Assistant",
@@ -187,8 +271,10 @@ export const translations = {
       expand: "Expand",
       close: "Close",
       thinking: "Bridge Assistant is thinking...",
-      disclaimer: "Answers are scoped to Canada-EU Bridge topics and processed through a secure server proxy.",
-      scopeWarning: "I specialize strictly in Visiting Canada, Investing in Canada, and the Canada-EU Partnership. Please feel free to ask about travel requirements, CETA benefits, or transatlantic relations!",
+      disclaimer:
+        "Answers are scoped to Canada-EU Bridge topics and processed through a secure server proxy.",
+      scopeWarning:
+        "I specialize strictly in Visiting Canada, Investing in Canada, and the Canada-EU Partnership. Please feel free to ask about travel requirements, CETA benefits, or transatlantic relations!",
       quickSuggestionsTitle: "Suggested Questions:",
     },
     disclaimer: {
@@ -196,23 +282,38 @@ export const translations = {
       dismiss: "Dismiss notice",
     },
     footer: {
-      brandDesc: "An informational portal dedicated to strengthening transatlantic ties, tourism, economic cooperation, and democratic partnerships between Canada and the European Union.",
+      brandDesc:
+        "An informational portal dedicated to strengthening transatlantic ties, tourism, economic cooperation, and democratic partnerships between Canada and the European Union.",
       sections: "Sections",
       links: "Official Resources",
       linksList: [
-        { label: "Government of Canada (canada.ca)", url: "https://www.canada.ca" },
-        { label: "European Commission (europa.eu)", url: "https://ec.europa.eu" },
+        {
+          label: "Government of Canada (canada.ca)",
+          url: "https://www.canada.ca",
+        },
+        {
+          label: "European Commission (europa.eu)",
+          url: "https://ec.europa.eu",
+        },
         { label: "Invest in Canada", url: "https://www.investcanada.ca" },
-        { label: "Destination Canada", url: "https://www.destinationcanada.com" },
-        { label: "EU Delegation to Canada", url: "https://www.eeas.europa.eu/delegations/canada_en" },
+        {
+          label: "Destination Canada",
+          url: "https://www.destinationcanada.com",
+        },
+        {
+          label: "EU Delegation to Canada",
+          url: "https://www.eeas.europa.eu/delegations/canada_en",
+        },
       ],
-      legal: "Bilingual platform for Canadian-European transatlantic cooperation. Content verified against official bilateral treaties.",
+      legal:
+        "Bilingual platform for Canadian-European transatlantic cooperation. Content reviewed for general accuracy against publicly available bilateral treaty texts.",
     },
   },
 
   fr: {
     siteTitle: "Pont Canada-UE",
-    siteSubtitle: "Passerelle transatlantique pour le tourisme, l'investissement et le partenariat stratégique",
+    siteSubtitle:
+      "Passerelle transatlantique pour le tourisme, l'investissement et le partenariat stratégique",
     nav: {
       visit: "Visiter le Canada",
       invest: "Investir au Canada",
@@ -221,41 +322,80 @@ export const translations = {
       chat: "Assistant du Pont",
     },
     hero: {
-      badge: "Portail d'information bilatérale officielle",
+      badge: "Portail d'information bilatérale indépendant",
       title: "Rapprocher le Canada et l'Union européenne",
-      subtitle: "Une passerelle moderne mettant en lumière le tourisme transatlantique, les investissements commerciaux sous l'AECG et notre partenariat stratégique historique au service d'un monde démocratique et durable.",
+      subtitle:
+        "Une passerelle moderne mettant en lumière le tourisme transatlantique, les investissements commerciaux sous l'AECG et notre partenariat stratégique historique au service d'un monde démocratique et durable.",
       ctaVisit: "Planifier votre visite",
       ctaInvest: "Découvrir l'investissement",
       ctaChat: "Interroger l'assistant",
       stats: [
-        { label: "Commerce bilatéral", value: "75 Mds €+", sub: "Sous l'accord de l'AECG" },
-        { label: "Entrée citoyen UE", value: "AVE", sub: "En ligne en 5 min, 7 $ CAD" },
-        { label: "Recherche scientifique", value: "Horizon Europe", sub: "Association Pilier II" },
-        { label: "Lignes sans douane", value: "98 %", sub: "Exemption tarifaire directe" },
+        {
+          label: "Commerce bilatéral",
+          value: "75 Mds €+",
+          sub: "Sous l'accord de l'AECG",
+        },
+        {
+          label: "Entrée citoyen UE",
+          value: "AVE",
+          sub: "En ligne en 5 min, 7 $ CAD",
+        },
+        {
+          label: "Recherche scientifique",
+          value: "Horizon Europe",
+          sub: "Association Pilier II",
+        },
+        {
+          label: "Lignes sans douane",
+          value: "98 %",
+          sub: "Exemption tarifaire directe",
+        },
       ],
     },
     news: {
       title: "Actualités en vedette",
-      subtitle: "Les faits marquants transatlantiques sur le commerce, les accords bilatéraux, les liaisons aériennes et l'innovation conjointe.",
-      editNotice: "Contenu statique : Vous pouvez modifier ou ajouter des actualités directement dans src/data/news.ts.",
+      subtitle:
+        "Les faits marquants transatlantiques sur le commerce, les accords bilatéraux, les liaisons aériennes et l'innovation conjointe.",
+      editNotice:
+        "Contenu statique : Vous pouvez modifier ou ajouter des actualités directement dans src/data/news.ts.",
       source: "Source officielle",
       readMore: "Points saillants",
     },
     visit: {
       title: "Visiter le Canada",
       badge: "Voyage et Tourisme",
-      tagline: "Découvrez des étendues sauvages majestueuses, une culture cosmopolite et une entrée facilitée pour les ressortissants européens.",
-      overview: "Le Canada accueille chaleureusement les voyageurs européens. Les citoyens des pays membres de l'UE bénéficient d'une dispense de visa pour des séjours touristiques ou d'affaires allant jusqu'à six mois. Une simple Autorisation de voyage électronique (AVE) est requise avant le vol.",
+      tagline:
+        "Découvrez des étendues sauvages majestueuses, une culture cosmopolite et une entrée facilitée pour les ressortissants européens.",
+      overview:
+        "Le Canada accueille chaleureusement les voyageurs européens. Les citoyens des pays membres de l'UE bénéficient d'une dispense de visa pour des séjours touristiques ou d'affaires allant jusqu'à six mois. Une simple Autorisation de voyage électronique (AVE) est requise avant le vol.",
       etaBox: {
         title: "Conditions d'AVE pour les citoyens de l'UE",
-        summary: "L'Autorisation de voyage électronique (AVE) est liée numériquement à votre passeport et reste valide jusqu'à 5 ans (ou jusqu'à l'expiration du passeport).",
+        summary:
+          "L'Autorisation de voyage électronique (AVE) est liée numériquement à votre passeport et reste valide jusqu'à 5 ans (ou jusqu'à l'expiration du passeport).",
         steps: [
-          { step: "1", title: "Passeport valide", desc: "Passeport biométrique d'un État membre de l'Union européenne." },
-          { step: "2", title: "Demande en ligne", desc: "Prend environ 5 minutes sur le portail officiel du gouvernement du Canada (canada.ca)." },
-          { step: "3", title: "Frais minimes", desc: "Seulement 7 $ CAD (~4,80 €) payables par carte bancaire." },
-          { step: "4", title: "Approbation rapide", desc: "La grande majorité des demandes sont confirmées par courriel en quelques minutes." },
+          {
+            step: "1",
+            title: "Passeport valide",
+            desc: "Passeport biométrique d'un État membre de l'Union européenne.",
+          },
+          {
+            step: "2",
+            title: "Demande en ligne",
+            desc: "Prend environ 5 minutes sur le portail officiel du gouvernement du Canada (canada.ca).",
+          },
+          {
+            step: "3",
+            title: "Frais minimes",
+            desc: "Seulement 7 $ CAD (~4,80 €) payables par carte bancaire.",
+          },
+          {
+            step: "4",
+            title: "Approbation rapide",
+            desc: "La grande majorité des demandes sont confirmées par courriel en quelques minutes.",
+          },
         ],
-        warning: "Effectuez toujours votre démarche sur le site officiel (canada.ca) pour éviter les surcoûts d'intermédiaires non autorisés.",
+        warning:
+          "Effectuez toujours votre démarche sur le site officiel (canada.ca) pour éviter les surcoûts d'intermédiaires non autorisés.",
       },
       destinations: [
         {
@@ -296,16 +436,27 @@ export const translations = {
         },
       ],
       tips: [
-        { title: "Vols directs", desc: "Liaisons sans escale quotidiennes reliant Paris, Francfort, Dublin, Rome ou Amsterdam à Montréal, Toronto et Vancouver." },
-        { title: "Monnaie et paiements", desc: "Dollar canadien ($ CAD). Le paiement sans contact et les cartes européennes sont universellement acceptés." },
-        { title: "Saisons idéales", desc: "Été (juin à sept.) pour les lacs et randonnées ; Automne (sept. à oct.) pour les couleurs flamboyantes ; Hiver pour les aurores et la neige." },
+        {
+          title: "Vols directs",
+          desc: "Liaisons sans escale quotidiennes reliant Paris, Francfort, Dublin, Rome ou Amsterdam à Montréal, Toronto et Vancouver.",
+        },
+        {
+          title: "Monnaie et paiements",
+          desc: "Dollar canadien ($ CAD). Le paiement sans contact et les cartes européennes sont universellement acceptés.",
+        },
+        {
+          title: "Saisons idéales",
+          desc: "Été (juin à sept.) pour les lacs et randonnées ; Automne (sept. à oct.) pour les couleurs flamboyantes ; Hiver pour les aurores et la neige.",
+        },
       ],
     },
     invest: {
       title: "Investir au Canada",
       badge: "Opportunités économiques et commerciales",
-      tagline: "Votre tremplin en Amérique du Nord avec une fiscalité compétitive, l'accès au marché de l'UE via l'AECG et des talents de premier rang.",
-      overview: "Le Canada offre aux entreprises européennes l'un des environnements d'affaires les plus stables, prévisibles et dynamiques au monde. Grâce à l'AECG (CETA), les investisseurs de l'UE bénéficient d'une sécurité juridique renforcée et de l'élimination des barrières tarifaires.",
+      tagline:
+        "Votre tremplin en Amérique du Nord avec une fiscalité compétitive, l'accès au marché de l'UE via l'AECG et des talents de premier rang.",
+      overview:
+        "Le Canada offre aux entreprises européennes l'un des environnements d'affaires les plus stables, prévisibles et dynamiques au monde. Grâce à l'AECG (CETA), les investisseurs de l'UE bénéficient d'une sécurité juridique renforcée et de l'élimination des barrières tarifaires.",
       cetaBenefits: [
         {
           title: "Élimination de 98 % des droits de douane",
@@ -347,16 +498,27 @@ export const translations = {
         },
       ],
       advantages: [
-        { title: "Dette nette/PIB la plus faible du G7", desc: "Rigueur budgétaire garantissant la stabilité macroéconomique et de solides notations souveraines." },
-        { title: "Stratégie pour les compétences mondiales", desc: "Délai de traitement accéléré de deux semaines pour les ingénieurs et spécialistes hautement qualifiés." },
-        { title: "Crédits d'impôt pour la R&D (RS&DE)", desc: "Incitations fiscales généreuses et remboursements directs pour la recherche scientifique et le développement expérimental." },
+        {
+          title: "Dette nette/PIB la plus faible du G7",
+          desc: "Rigueur budgétaire garantissant la stabilité macroéconomique et de solides notations souveraines.",
+        },
+        {
+          title: "Stratégie pour les compétences mondiales",
+          desc: "Délai de traitement accéléré de deux semaines pour les ingénieurs et spécialistes hautement qualifiés.",
+        },
+        {
+          title: "Crédits d'impôt pour la R&D (RS&DE)",
+          desc: "Incitations fiscales généreuses et remboursements directs pour la recherche scientifique et le développement expérimental.",
+        },
       ],
     },
     partnership: {
       title: "Partenariat Canada-UE",
       badge: "Diplomatie, Sécurité et Valeurs communes",
-      tagline: "Une alliance stratégique fondée sur des principes démocratiques partagés, l'ordre international fondé sur des règles et l'action pour le climat.",
-      overview: "La relation entre le Canada et l'Union européenne repose sur une confiance mutuelle, des liens historiques profonds et un attachement sans faille à la paix, aux droits de l'homme et au développement durable. Structurée par l'Accord de partenariat stratégique (APS) et l'AECG, cette alliance façonne l'avenir transatlantique.",
+      tagline:
+        "Une alliance stratégique fondée sur des principes démocratiques partagés, l'ordre international fondé sur des règles et l'action pour le climat.",
+      overview:
+        "La relation entre le Canada et l'Union européenne repose sur une confiance mutuelle, des liens historiques profonds et un attachement sans faille à la paix, aux droits de l'homme et au développement durable. Structurée par l'Accord de partenariat stratégique (APS) et l'AECG, cette alliance façonne l'avenir transatlantique.",
       pillars: [
         {
           title: "Accord de partenariat stratégique (APS)",
@@ -376,19 +538,41 @@ export const translations = {
         },
       ],
       milestones: [
-        { year: "1976", title: "Accord-cadre fondateur", desc: "Premier accord bilatéral officiel de coopération économique signé entre le Canada et les Communautés européennes." },
-        { year: "2016", title: "Signature de l'AECG et de l'APS", desc: "Signature historique de l'Accord économique et commercial global et de l'Accord de partenariat stratégique." },
-        { year: "2017", title: "Application provisoire de l'AECG", desc: "Suppression des droits de douane sur 98 % des échanges, dynamisant les flux commerciaux transatlantiques." },
-        { year: "2021", title: "Partenariat sur les matières premières", desc: "Accord bilatéral visant l'intégration durable des chaînes de valeur de minéraux critiques entre le Canada et l'UE." },
-        { year: "2024–2026", title: "Association à Horizon Europe", desc: "Intégration officielle du Canada au programme de recherche européen Horizon Europe Pilier II." },
+        {
+          year: "1976",
+          title: "Accord-cadre fondateur",
+          desc: "Premier accord bilatéral officiel de coopération économique signé entre le Canada et les Communautés européennes.",
+        },
+        {
+          year: "2016",
+          title: "Signature de l'AECG et de l'APS",
+          desc: "Signature historique de l'Accord économique et commercial global et de l'Accord de partenariat stratégique.",
+        },
+        {
+          year: "2017",
+          title: "Application provisoire de l'AECG",
+          desc: "Suppression des droits de douane sur 98 % des échanges, dynamisant les flux commerciaux transatlantiques.",
+        },
+        {
+          year: "2021",
+          title: "Partenariat sur les matières premières",
+          desc: "Accord bilatéral visant l'intégration durable des chaînes de valeur de minéraux critiques entre le Canada et l'UE.",
+        },
+        {
+          year: "2024–2026",
+          title: "Association à Horizon Europe",
+          desc: "Intégration officielle du Canada au programme de recherche européen Horizon Europe Pilier II.",
+        },
       ],
     },
     chat: {
       title: "Assistant du Pont",
       subtitle: "Assistant IA propulsé par Gemini",
       badge: "Périmètre : Visite, Investissement & Partenariat",
-      greeting: "Bonjour ! Je suis l'assistant officiel du Pont Canada-UE. Je réponds à vos questions sur les séjours au Canada (AVE, destinations, logistique), l'investissement (AECG, secteurs porteurs, fiscalité) et le partenariat Canada-UE. En quoi puis-je vous renseigner ?",
-      inputPlaceholder: "Posez votre question sur les voyages, l'investissement ou le partenariat...",
+      greeting:
+        "Bonjour ! Je suis l'assistant officiel du Pont Canada-UE. Je réponds à vos questions sur les séjours au Canada (AVE, destinations, logistique), l'investissement (AECG, secteurs porteurs, fiscalité) et le partenariat Canada-UE. En quoi puis-je vous renseigner ?",
+      inputPlaceholder:
+        "Posez votre question sur les voyages, l'investissement ou le partenariat...",
       send: "Envoyer",
       clear: "Effacer",
       open: "Assistant du Pont",
@@ -396,8 +580,10 @@ export const translations = {
       expand: "Agrandir",
       close: "Fermer",
       thinking: "L'assistant analyse votre demande...",
-      disclaimer: "Réponses strictement limitées aux trois thématiques du site, sécurisées par le serveur proxy.",
-      scopeWarning: "Mon domaine est strictement réservé à la visite au Canada, à l'investissement et au partenariat Canada-UE. N'hésitez pas à m'interroger sur l'AVE, les opportunités sous l'AECG ou nos accords bilatéraux !",
+      disclaimer:
+        "Réponses strictement limitées aux trois thématiques du site, sécurisées par le serveur proxy.",
+      scopeWarning:
+        "Mon domaine est strictement réservé à la visite au Canada, à l'investissement et au partenariat Canada-UE. N'hésitez pas à m'interroger sur l'AVE, les opportunités sous l'AECG ou nos accords bilatéraux !",
       quickSuggestionsTitle: "Questions suggérées :",
     },
     disclaimer: {
@@ -405,17 +591,31 @@ export const translations = {
       dismiss: "Fermer l'avis",
     },
     footer: {
-      brandDesc: "Portail d'information dédié au renforcement des liens transatlantiques, du tourisme, des synergies économiques et des partenariats démocratiques entre le Canada et l'Union européenne.",
+      brandDesc:
+        "Portail d'information dédié au renforcement des liens transatlantiques, du tourisme, des synergies économiques et des partenariats démocratiques entre le Canada et l'Union européenne.",
       sections: "Thématiques",
       links: "Ressources officielles",
       linksList: [
-        { label: "Gouvernement du Canada (canada.ca)", url: "https://www.canada.ca/fr.html" },
-        { label: "Commission européenne (europa.eu)", url: "https://commission.europa.eu/index_fr" },
+        {
+          label: "Gouvernement du Canada (canada.ca)",
+          url: "https://www.canada.ca/fr.html",
+        },
+        {
+          label: "Commission européenne (europa.eu)",
+          url: "https://commission.europa.eu/index_fr",
+        },
         { label: "Investir au Canada", url: "https://www.investcanada.ca/fr" },
-        { label: "Destination Canada", url: "https://www.destinationcanada.com/fr" },
-        { label: "Délégation de l'UE au Canada", url: "https://www.eeas.europa.eu/delegations/canada_fr" },
+        {
+          label: "Destination Canada",
+          url: "https://www.destinationcanada.com/fr",
+        },
+        {
+          label: "Délégation de l'UE au Canada",
+          url: "https://www.eeas.europa.eu/delegations/canada_fr",
+        },
       ],
-      legal: "Plateforme bilingue pour la coopération transatlantique canado-européenne. Données alignées sur les traités bilatéraux officiels.",
+      legal:
+        "Plateforme bilingue pour la coopération transatlantique canado-européenne. Contenu revu pour son exactitude générale par rapport aux textes des traités bilatéraux accessibles au public.",
     },
   },
 };
@@ -425,35 +625,45 @@ export const QUICK_PROMPTS: QuickPrompt[] = [
     category: "visit",
     labelEn: "eTA requirements for EU citizens",
     labelFr: "Conditions d'AVE pour citoyens UE",
-    promptEn: "What are the exact eTA travel authorization requirements and application steps for European Union citizens traveling to Canada?",
-    promptFr: "Quelles sont les conditions et étapes exactes d'obtention de l'AVE pour un citoyen de l'Union européenne voyageant au Canada ?",
+    promptEn:
+      "What are the exact eTA travel authorization requirements and application steps for European Union citizens traveling to Canada?",
+    promptFr:
+      "Quelles sont les conditions et étapes exactes d'obtention de l'AVE pour un citoyen de l'Union européenne voyageant au Canada ?",
   },
   {
     category: "invest",
     labelEn: "How CETA eliminates tariffs",
     labelFr: "Avantages douaniers de l'AECG (CETA)",
-    promptEn: "How does the CETA agreement eliminate tariffs and facilitate market access for European companies investing in Canada?",
-    promptFr: "Comment l'AECG (CETA) élimine-t-il les droits de douane et favorise-t-il les entreprises européennes qui investissent au Canada ?",
+    promptEn:
+      "How does the CETA agreement eliminate tariffs and facilitate market access for European companies investing in Canada?",
+    promptFr:
+      "Comment l'AECG (CETA) élimine-t-il les droits de douane et favorise-t-il les entreprises européennes qui investissent au Canada ?",
   },
   {
     category: "partnership",
     labelEn: "Horizon Europe & science ties",
     labelFr: "Horizon Europe et recherche conjointe",
-    promptEn: "What does Canada's association with Horizon Europe Pillar II mean for transatlantic scientific research collaboration?",
-    promptFr: "Que permet l'association officielle du Canada au Pilier II d'Horizon Europe pour la recherche scientifique conjointe ?",
+    promptEn:
+      "What does Canada's association with Horizon Europe Pillar II mean for transatlantic scientific research collaboration?",
+    promptFr:
+      "Que permet l'association officielle du Canada au Pilier II d'Horizon Europe pour la recherche scientifique conjointe ?",
   },
   {
     category: "visit",
     labelEn: "Best season for Canadian Rockies",
     labelFr: "Meilleure saison pour les Rocheuses",
-    promptEn: "Which seasons are best for European travelers visiting the Canadian Rockies and what are the flight options?",
-    promptFr: "Quelle est la meilleure saison pour les voyageurs européens visitant les Rocheuses canadiennes et quelles sont les liaisons aériennes directes ?",
+    promptEn:
+      "Which seasons are best for European travelers visiting the Canadian Rockies and what are the flight options?",
+    promptFr:
+      "Quelle est la meilleure saison pour les voyageurs européens visitant les Rocheuses canadiennes et quelles sont les liaisons aériennes directes ?",
   },
   {
     category: "invest",
     labelEn: "Clean tech & green hydrogen",
     labelFr: "Technologies propres et hydrogène vert",
-    promptEn: "What opportunities exist in Canada for European investors in green hydrogen, critical minerals, and clean technologies?",
-    promptFr: "Quelles sont les opportunités d'investissement au Canada pour les entreprises européennes dans l'hydrogène vert et les minéraux critiques ?",
+    promptEn:
+      "What opportunities exist in Canada for European investors in green hydrogen, critical minerals, and clean technologies?",
+    promptFr:
+      "Quelles sont les opportunités d'investissement au Canada pour les entreprises européennes dans l'hydrogène vert et les minéraux critiques ?",
   },
 ];

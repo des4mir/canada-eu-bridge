@@ -36,7 +36,7 @@ export const Hero: React.FC<HeroProps> = ({ currentLang, onOpenChatWithTopic }) 
           <span className="text-slate-500">|</span>
           <span className="text-amber-300 flex items-center gap-1 font-semibold">
             <ShieldCheck className="w-3.5 h-3.5" />
-            CETA & SPA Active
+            {currentLang === "en" ? "CETA & SPA — Informational Overview" : "AECG et PSA — Aperçu informatif"}
           </span>
         </div>
 
@@ -45,7 +45,7 @@ export const Hero: React.FC<HeroProps> = ({ currentLang, onOpenChatWithTopic }) 
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
             {t.hero.title}
           </h1>
-          <p className="mt-5 text-base sm:text-xl text-slate-300 font-normal leading-relaxed max-w-3xl">
+          <p className="mt-5 text-base sm:text-xl text-slate-300 font-medium leading-relaxed max-w-3xl">
             {t.hero.subtitle}
           </p>
         </div>
