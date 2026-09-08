@@ -109,7 +109,7 @@ app.post("/api/chat", chatLimiter, async (req: Request, res: Response) => {
 
     const ai = getGeminiClient();
 
-    // Prepare contents formatted for gemini-3.8-flash
+    // Prepare contents formatted for gemini-3.6-flash
     const contents: Array<{ role: string; parts: Array<{ text: string }> }> =
       [];
 
@@ -149,7 +149,7 @@ app.post("/api/chat", chatLimiter, async (req: Request, res: Response) => {
         : "\nNote: User's UI language is currently set to English. Please respond in English unless they explicitly asked in French.";
 
     const response = await ai.models.generateContent({
-      model: "gemini-2.5-flash",
+      model: process.env.GEMINI_MODEL_NAME || "gemini-3.6-flash",
       contents,
       config: {
         systemInstruction: SYSTEM_INSTRUCTION + langDirective,
