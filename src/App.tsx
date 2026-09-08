@@ -11,6 +11,8 @@ import { Footer } from "./components/Footer";
 import { ChatAssistant } from "./components/ChatAssistant";
 import { DisclaimerBanner } from "./components/DisclaimerBanner";
 import { translations } from "./data/translations";
+import { AdSlot } from "./components/AdSlot";
+import { CookieConsent } from "./components/CookieConsent";
 
 export default function App() {
   const [currentLang, setCurrentLang] = useState<Language>(() => {
@@ -60,24 +62,13 @@ export default function App() {
           onOpenChatWithTopic={handleOpenChatWithQuery}
         />
 
-        {/* Static News Highlights Section */}
-        <NewsSection
-          currentLang={currentLang}
-          onAskAboutNews={(title) =>
-            handleOpenChatWithQuery(
-              currentLang === "fr"
-                ? `Explique-moi cette actualité récente : ${title}`
-                : `Explain this recent news highlight: ${title}`
-            )
-          }
-        />
-
         {/* Section 1: Visit Canada */}
         <VisitSection
           currentLang={currentLang}
           onAskAboutTravel={handleOpenChatWithQuery}
         />
 
+        <div className="bg-slate-50 border-b border-slate-200 py-4"><AdSlot format="leaderboard" className="hidden md:flex" /><AdSlot format="rectangle" className="flex md:hidden" /></div>
         {/* Section 2: Invest in Canada */}
         <InvestSection
           currentLang={currentLang}
@@ -88,6 +79,18 @@ export default function App() {
         <PartnershipSection
           currentLang={currentLang}
           onAskAboutPartnership={handleOpenChatWithQuery}
+        />
+
+        {/* Static News Highlights Section */}
+        <NewsSection
+          currentLang={currentLang}
+          onAskAboutNews={(title) =>
+            handleOpenChatWithQuery(
+              currentLang === "fr"
+                ? `Explique-moi cette actualité récente : ${title}`
+                : `Explain this recent news highlight: ${title}`
+            )
+          }
         />
       </main>
 
@@ -102,7 +105,7 @@ export default function App() {
         <button
           id="floating-chat-trigger"
           onClick={() => setIsChatOpen(true)}
-          className="fixed bottom-6 right-6 z-40 flex items-center gap-2.5 px-4 py-3 bg-gradient-to-r from-blue-700 via-indigo-700 to-blue-800 text-white font-semibold text-sm rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-blue-300"
+          className="fixed bottom-6 right-6 z-40 flex items-center gap-2.5 px-4 py-3 bg-gradient-to-r from-blue-700 via-indigo-700 to-blue-800 text-white font-semibold text-base rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-blue-300"
           aria-label={t.chat.open}
         >
           <div className="relative">
@@ -122,6 +125,7 @@ export default function App() {
         initialQuery={initialChatQuery}
         onClearInitialQuery={() => setInitialChatQuery(undefined)}
       />
+      <CookieConsent currentLang={currentLang} />
     </div>
   );
 }

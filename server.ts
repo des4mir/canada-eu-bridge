@@ -1,4 +1,5 @@
 import express, { Request, Response } from "express";
+import rateLimit from "express-rate-limit";
 import path from "path";
 import dotenv from "dotenv";
 import { createServer as createViteServer } from "vite";
@@ -69,7 +70,15 @@ app.get("/api/health", (_req: Request, res: Response) => {
 });
 
 // Proxy Chat Endpoint
-app.post("/api/chat", async (req: Request, res: Response) => {
+const chatLimiter = rateLimit({
+  windowMs: 60 * 60 * 1000, // 1 hour window
+  max: 30, // Limit each IP to 30 chat requests per window (to control Gemini API costs)
+  message: { error: { message: "Too many requests from this IP. Please try again after an hour." } },
+  standardHeaders: true,
+  legacyHeaders: false,
+});
+
+app.post("/api/chat", chatLimiter, async (req: Request, res: Response) => {
   try {
     const { messages, userMessage, language } = req.body;
 
@@ -143,6 +152,57 @@ app.post("/api/chat", async (req: Request, res: Response) => {
         message: errorMessage,
       },
     });
+  }
+});
+
+// Simple in-memory cache for news to avoid hitting API limits
+interface NewsCache {
+  timestamp: number;
+  data: any;
+}
+let newsCache: NewsCache | null = null;
+const NEWS_CACHE_DURATION = 30 * 60 * 1000; // 30 minutes
+
+// News API Proxy Endpoint
+app.get("/api/news", async (req: Request, res: Response) => {
+  try {
+    // Return cached data if valid
+    if (newsCache && (Date.now() - newsCache.timestamp < NEWS_CACHE_DURATION)) {
+      return res.json({ articles: newsCache.data });
+    }
+
+    const apiKey = process.env.NEWS_API_KEY;
+    if (!apiKey) {
+      // Return 503 if API key is not configured so frontend can fallback
+      return res.status(503).json({ error: "NEWS_API_KEY is not configured in server environment." });
+    }
+
+    // GNews API endpoint fetching specific relevant topics
+    const searchQuery = encodeURIComponent('"Canada tourism" OR "Canada EU trade" OR "CETA" OR "Canada foreign investment"');
+    const url = `https://gnews.io/api/v4/search?q=${searchQuery}&lang=en&max=4&apikey=${apiKey}`;
+    
+    const response = await fetch(url);
+    let data;
+    try {
+      data = await response.json();
+    } catch (e) {
+      console.error("Failed to parse JSON from GNews API");
+      return res.status(500).json({ error: "Failed to fetch articles from news provider (Invalid JSON)" });
+    }
+    
+    if (data.articles) {
+      newsCache = {
+        timestamp: Date.now(),
+        data: data.articles
+      };
+      return res.json({ articles: data.articles });
+    } else {
+      console.error("GNews API response error:", data);
+      return res.status(500).json({ error: "Failed to fetch articles from news provider" });
+    }
+  } catch (error: any) {
+    console.error("Backend News API Proxy Error:", error);
+    return res.status(500).json({ error: "Internal server error while fetching news." });
   }
 });
 

@@ -18,7 +18,7 @@ export const PartnershipSection: React.FC<PartnershipSectionProps> = ({ currentL
         
         {/* Section Header */}
         <div className="max-w-3xl mb-12">
-          <div className="inline-flex flex-wrap items-center justify-center gap-1.5 px-3 py-1 rounded-full bg-indigo-100 border border-indigo-200 text-indigo-800 text-xs font-semibold uppercase tracking-wider mb-3">
+          <div className="inline-flex flex-wrap items-center justify-center gap-1.5 px-3 py-1 rounded-full bg-indigo-100 border border-indigo-200 text-indigo-800 text-sm font-semibold uppercase tracking-wider mb-3">
             <Handshake className="w-3.5 h-3.5" />
             {t.badge}
           </div>
@@ -28,7 +28,7 @@ export const PartnershipSection: React.FC<PartnershipSectionProps> = ({ currentL
           <p className="text-base sm:text-lg text-indigo-900 font-medium mt-1">
             {t.tagline}
           </p>
-          <p className="text-sm sm:text-base text-slate-600 mt-3 leading-relaxed">
+          <p className="text-base sm:text-base text-slate-600 mt-3 leading-relaxed">
             {t.overview}
           </p>
         </div>
@@ -37,7 +37,7 @@ export const PartnershipSection: React.FC<PartnershipSectionProps> = ({ currentL
         <div className="flex flex-wrap border-b border-slate-200 gap-4 sm:gap-8 mb-8 pb-1">
           <button
             onClick={() => setActiveTab("pillars")}
-            className={`flex items-center gap-2 pb-3 text-sm font-semibold border-b-2 transition-all ${
+            className={`flex items-center gap-2 pb-3 text-base font-semibold border-b-2 transition-all ${
               activeTab === "pillars"
                 ? "border-indigo-600 text-indigo-700"
                 : "border-transparent text-slate-500 hover:text-slate-800 hover:border-slate-300"
@@ -48,7 +48,7 @@ export const PartnershipSection: React.FC<PartnershipSectionProps> = ({ currentL
           </button>
           <button
             onClick={() => setActiveTab("milestones")}
-            className={`flex items-center gap-2 pb-3 text-sm font-semibold border-b-2 transition-all ${
+            className={`flex items-center gap-2 pb-3 text-base font-semibold border-b-2 transition-all ${
               activeTab === "milestones"
                 ? "border-indigo-600 text-indigo-700"
                 : "border-transparent text-slate-500 hover:text-slate-800 hover:border-slate-300"
@@ -76,18 +76,18 @@ export const PartnershipSection: React.FC<PartnershipSectionProps> = ({ currentL
                       {pillar.title}
                     </h3>
                   </div>
-                  <p className="text-sm text-slate-600 leading-relaxed mt-2">
+                  <p className="text-base text-slate-600 leading-relaxed mt-2">
                     {pillar.desc}
                   </p>
                 </div>
 
                 <div className="mt-6 pt-4 border-t border-slate-200/70 flex items-center justify-between">
-                  <span className="text-xs text-indigo-800 font-medium">
+                  <span className="text-sm text-indigo-800 font-medium">
                     {currentLang === "en" ? "Bilateral Commitment" : "Engagement bilatéral"}
                   </span>
                   <button
                     onClick={() => onAskAboutPartnership?.(pillar.title)}
-                    className="text-xs font-semibold text-indigo-700 hover:text-indigo-900 flex items-center gap-1 transition-colors"
+                    className="text-sm font-semibold text-indigo-700 hover:text-indigo-900 flex items-center gap-1 transition-colors"
                   >
                     <Sparkles className="w-3.5 h-3.5" />
                     <span>{currentLang === "en" ? "Ask Assistant" : "Interroger l'assistant"}</span>
@@ -108,19 +108,19 @@ export const PartnershipSection: React.FC<PartnershipSectionProps> = ({ currentL
                 
                 <div className="bg-slate-50 border border-slate-200 rounded-2xl p-5 sm:p-6 hover:shadow-xs hover:border-indigo-300 transition-all">
                   <div className="flex items-center gap-3">
-                    <span className="text-xs font-extrabold px-3 py-1 rounded-full bg-indigo-600 text-white shadow-2xs">
+                    <span className="text-sm font-extrabold px-3 py-1 rounded-full bg-indigo-600 text-white shadow-2xs">
                       {milestone.year}
                     </span>
                     <h3 className="text-base sm:text-lg font-bold text-slate-900">
                       {milestone.title}
                     </h3>
                   </div>
-                  <p className="text-sm text-slate-600 mt-2 leading-relaxed">
+                  <p className="text-base text-slate-600 mt-2 leading-relaxed">
                     {milestone.desc}
                   </p>
                   <button
                     onClick={() => onAskAboutPartnership?.(`${currentLang === "fr" ? "Explique le jalon historique : " : "Explain the historical milestone: "} ${milestone.year} - ${milestone.title}`)}
-                    className="mt-3 text-xs font-semibold text-indigo-700 hover:text-indigo-900 inline-flex flex-wrap items-center justify-center gap-1 transition-colors"
+                    className="mt-3 text-sm font-semibold text-indigo-700 hover:text-indigo-900 inline-flex flex-wrap items-center justify-center gap-1 transition-colors"
                   >
                     <Sparkles className="w-3 h-3" />
                     <span>{currentLang === "en" ? "Explore details via Assistant" : "Explorer les détails avec l'assistant"}</span>
@@ -141,7 +141,7 @@ export const PartnershipSection: React.FC<PartnershipSectionProps> = ({ currentL
               <h3 className="text-lg font-bold text-white">
                 {currentLang === "en" ? "Grounded in Democratic Values & International Law" : "Fondé sur les valeurs démocratiques et le droit international"}
               </h3>
-              <p className="text-xs sm:text-sm text-slate-300 mt-1 leading-relaxed max-w-3xl">
+              <p className="text-sm sm:text-base text-slate-300 mt-1 leading-relaxed max-w-3xl">
                 {currentLang === "en"
                   ? "Canada and the EU stand as premier multilateral partners defending sovereignty, human rights, fair trade, gender equality, and sustainable climate stewardship on the global stage."
                   : "Le Canada et l'UE se positionnent comme des partenaires multilatéraux majeurs défendant la souveraineté, les droits fondamentaux, le commerce équitable et la transition climatique responsable sur la scène internationale."}

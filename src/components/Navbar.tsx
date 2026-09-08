@@ -34,9 +34,9 @@ export const Navbar: React.FC<NavbarProps> = ({ currentLang, onToggleLang, onOpe
         >
           <div className="relative flex items-center justify-center w-10 h-10 xl:w-11 xl:h-11 rounded-xl bg-gradient-to-br from-blue-700 via-indigo-900 to-red-600 p-0.5 shadow-sm ring-1 ring-white/20">
             <div className="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center overflow-hidden">
-              <span className="text-amber-400 font-bold text-[10px] xl:text-xs tracking-tighter">EU</span>
-              <span className="text-slate-500 font-bold text-[10px] xl:text-xs mx-0.5">·</span>
-              <span className="text-red-500 font-bold text-[10px] xl:text-xs tracking-tighter">CA</span>
+              <span className="text-amber-400 font-bold text-sm xl:text-sm tracking-tighter">EU</span>
+              <span className="text-slate-500 font-bold text-sm xl:text-sm mx-0.5">·</span>
+              <span className="text-red-500 font-bold text-sm xl:text-sm tracking-tighter">CA</span>
             </div>
           </div>
           <div className="hidden sm:block">
@@ -44,11 +44,11 @@ export const Navbar: React.FC<NavbarProps> = ({ currentLang, onToggleLang, onOpe
               <span className="font-bold text-base xl:text-lg tracking-tight text-white group-hover:text-blue-300 transition-colors whitespace-nowrap">
                 {currentLang === "en" ? "Canada-EU Bridge" : "Pont Canada-UE"}
               </span>
-              <span className="text-[9px] xl:text-[10px] font-semibold uppercase px-1.5 py-0.5 rounded bg-blue-500/20 text-blue-300 border border-blue-400/30 whitespace-nowrap hidden md:inline-block">
+              <span className="text-sm xl:text-sm font-semibold uppercase px-1.5 py-0.5 rounded bg-blue-500/20 text-blue-300 border border-blue-400/30 whitespace-nowrap hidden md:inline-block">
                 CETA · SPA
               </span>
             </div>
-            <p className="text-[10px] xl:text-[11px] text-slate-400 font-medium hidden md:block whitespace-nowrap">
+            <p className="text-sm xl:text-sm text-slate-400 font-medium hidden md:block whitespace-nowrap">
               {currentLang === "en" ? "Bilateral Gateway & Assistant" : "Passerelle & Assistant Bilatéral"}
             </p>
           </div>
@@ -58,28 +58,28 @@ export const Navbar: React.FC<NavbarProps> = ({ currentLang, onToggleLang, onOpe
         <nav className="hidden xl:flex items-center gap-1 xl:gap-2 min-w-0">
           <button
             onClick={() => scrollToSection("visit")}
-            className="flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/60 rounded-lg transition-all whitespace-nowrap"
+            className="flex items-center gap-1.5 px-3 py-2 text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800/60 rounded-lg transition-all whitespace-nowrap"
           >
             <Compass className="w-4 h-4 text-emerald-400 shrink-0" />
             {t.nav.visit}
           </button>
           <button
             onClick={() => scrollToSection("invest")}
-            className="flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/60 rounded-lg transition-all whitespace-nowrap"
+            className="flex items-center gap-1.5 px-3 py-2 text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800/60 rounded-lg transition-all whitespace-nowrap"
           >
             <TrendingUp className="w-4 h-4 text-amber-400 shrink-0" />
             {t.nav.invest}
           </button>
           <button
             onClick={() => scrollToSection("partnership")}
-            className="flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/60 rounded-lg transition-all whitespace-nowrap"
+            className="flex items-center gap-1.5 px-3 py-2 text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800/60 rounded-lg transition-all whitespace-nowrap"
           >
             <Handshake className="w-4 h-4 text-blue-400 shrink-0" />
             {t.nav.partnership}
           </button>
           <button
             onClick={() => scrollToSection("news")}
-            className="flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/60 rounded-lg transition-all whitespace-nowrap"
+            className="flex items-center gap-1.5 px-3 py-2 text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800/60 rounded-lg transition-all whitespace-nowrap"
           >
             <Newspaper className="w-4 h-4 text-purple-400 shrink-0" />
             {t.nav.news}
@@ -93,7 +93,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentLang, onToggleLang, onOpe
           <button
             id="language-switcher-btn"
             onClick={onToggleLang}
-            className="flex items-center gap-1.5 px-2.5 xl:px-3 py-1.5 text-xs xl:text-sm font-semibold rounded-lg bg-slate-800 border border-slate-700 hover:border-slate-500 text-slate-200 hover:text-white transition-colors focus:ring-2 focus:ring-blue-500 focus:outline-none whitespace-nowrap"
+            className="flex items-center gap-1.5 px-2.5 xl:px-3 py-1.5 text-sm xl:text-base font-semibold rounded-lg bg-slate-800 border border-slate-700 hover:border-slate-500 text-slate-200 hover:text-white transition-colors focus:ring-2 focus:ring-blue-500 focus:outline-none whitespace-nowrap"
             title={currentLang === "en" ? "Passer en Français" : "Switch to English"}
             aria-label="Toggle language"
           >
@@ -107,7 +107,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentLang, onToggleLang, onOpe
           <button
             id="header-chat-btn"
             onClick={onOpenChat}
-            className="flex items-center gap-1.5 xl:gap-2 px-3 xl:px-3.5 py-1.5 text-xs xl:text-sm font-semibold rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white shadow-sm hover:shadow transition-all focus:ring-2 focus:ring-indigo-400 focus:outline-none whitespace-nowrap"
+            className="flex items-center gap-1.5 xl:gap-2 px-3 xl:px-3.5 py-1.5 text-sm xl:text-base font-semibold rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white shadow-sm hover:shadow transition-all focus:ring-2 focus:ring-indigo-400 focus:outline-none whitespace-nowrap"
           >
             <MessageSquare className="w-3.5 h-3.5 xl:w-4 xl:h-4 text-white shrink-0" />
             <span className="hidden sm:inline">{t.nav.chat}</span>
@@ -130,28 +130,28 @@ export const Navbar: React.FC<NavbarProps> = ({ currentLang, onToggleLang, onOpe
         <div className="xl:hidden bg-slate-900 border-b border-slate-800 px-4 pt-2 pb-6 space-y-2">
           <button
             onClick={() => scrollToSection("visit")}
-            className="flex items-center gap-3 w-full text-left px-3 py-2.5 rounded-lg text-sm font-medium text-slate-200 hover:bg-slate-800"
+            className="flex items-center gap-3 w-full text-left px-3 py-2.5 rounded-lg text-base font-medium text-slate-200 hover:bg-slate-800"
           >
             <Compass className="w-5 h-5 text-emerald-400" />
             {t.nav.visit}
           </button>
           <button
             onClick={() => scrollToSection("invest")}
-            className="flex items-center gap-3 w-full text-left px-3 py-2.5 rounded-lg text-sm font-medium text-slate-200 hover:bg-slate-800"
+            className="flex items-center gap-3 w-full text-left px-3 py-2.5 rounded-lg text-base font-medium text-slate-200 hover:bg-slate-800"
           >
             <TrendingUp className="w-5 h-5 text-amber-400" />
             {t.nav.invest}
           </button>
           <button
             onClick={() => scrollToSection("partnership")}
-            className="flex items-center gap-3 w-full text-left px-3 py-2.5 rounded-lg text-sm font-medium text-slate-200 hover:bg-slate-800"
+            className="flex items-center gap-3 w-full text-left px-3 py-2.5 rounded-lg text-base font-medium text-slate-200 hover:bg-slate-800"
           >
             <Handshake className="w-5 h-5 text-blue-400" />
             {t.nav.partnership}
           </button>
           <button
             onClick={() => scrollToSection("news")}
-            className="flex items-center gap-3 w-full text-left px-3 py-2.5 rounded-lg text-sm font-medium text-slate-200 hover:bg-slate-800"
+            className="flex items-center gap-3 w-full text-left px-3 py-2.5 rounded-lg text-base font-medium text-slate-200 hover:bg-slate-800"
           >
             <Newspaper className="w-5 h-5 text-purple-400" />
             {t.nav.news}
