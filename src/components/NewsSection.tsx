@@ -20,9 +20,14 @@ export const NewsSection: React.FC<NewsSectionProps> = ({ currentLang, onAskAbou
         setLoading(true);
         const res = await fetch("/api/news");
         let data;
+        const responseText = await res.text();
         try {
-          data = await res.json();
+          data = JSON.parse(responseText);
         } catch (parseError) {
+          console.error("Failed to parse JSON for news. Response text:", responseText.substring(0, 200));
+          if (!res.ok) {
+            throw new Error(`Server returned status ${res.status}`);
+          }
           throw new Error("Invalid response format from server");
         }
         if (!res.ok) {

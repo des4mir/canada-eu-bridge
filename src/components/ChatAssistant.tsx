@@ -101,9 +101,11 @@ export const ChatAssistant: React.FC<ChatAssistantProps> = ({
       });
 
       let data;
+      const responseText = await response.text();
       try {
-        data = await response.json();
+        data = JSON.parse(responseText);
       } catch (parseError) {
+        console.error("Failed to parse JSON. Response text:", responseText.substring(0, 200));
         if (!response.ok) {
           throw new Error(`Server returned status ${response.status}`);
         }

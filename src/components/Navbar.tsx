@@ -78,13 +78,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentLang, onToggleLang, onOpe
           className="flex items-center gap-2 xl:gap-3 group focus:outline-none shrink-0"
           aria-label="Canada-EU Bridge Home"
         >
-          <div className="relative flex items-center justify-center w-10 h-10 xl:w-11 xl:h-11 rounded-xl bg-gradient-to-br from-blue-700 via-indigo-900 to-red-600 p-0.5 shadow-sm ring-1 ring-white/20">
-            <div className="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center overflow-hidden">
-              <span className="text-amber-400 font-bold text-sm xl:text-sm tracking-tighter">EU</span>
-              <span className="text-slate-500 font-bold text-sm xl:text-sm mx-0.5">·</span>
-              <span className="text-red-500 font-bold text-sm xl:text-sm tracking-tighter">CA</span>
-            </div>
-          </div>
+          <img src="/logo.svg" alt="Canada-EU Bridge Logo" className="w-10 h-10 xl:w-11 xl:h-11 object-contain" />
           <div className="hidden sm:block">
             <div className="flex items-center gap-1.5 xl:gap-2">
               <span className="font-bold text-base xl:text-lg tracking-tight text-white group-hover:text-blue-300 transition-colors whitespace-nowrap">
