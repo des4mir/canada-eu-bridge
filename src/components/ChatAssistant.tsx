@@ -51,11 +51,17 @@ export const ChatAssistant: React.FC<ChatAssistantProps> = ({
     }
   }, [initialQuery]);
 
-  // Scroll to bottom on new messages
+  // Smart scrolling on new messages
   useEffect(() => {
-    if (isOpen) {
+    if (!isOpen) return;
+    
+    // If we just sent a message (isLoading is true) or if the last message is from the user, scroll to bottom
+    const lastMsg = messages[messages.length - 1];
+    if (isLoading || (lastMsg && lastMsg.role === 'user')) {
       messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
     }
+    // If the assistant just replied (long message), we don't want to snap to the bottom of their message,
+    // which forces the user to scroll up to read it.
   }, [messages, isLoading, isOpen]);
 
   // Focus input when opened
