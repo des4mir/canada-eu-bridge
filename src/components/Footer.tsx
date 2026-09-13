@@ -51,7 +51,7 @@ export const Footer: React.FC<FooterProps> = ({ currentLang, onToggleLang }) => 
             <div className="flex flex-wrap items-center gap-3 text-sm text-slate-300 min-w-0">
               <span className="flex flex-wrap items-center gap-1">
                 <ShieldCheck className="w-4 h-4 text-emerald-400" />
-                CETA & SPA Information Compliant
+                {currentLang === "en" ? "Content reviewed against public CETA & SPA treaty texts" : "Contenu révisé d'après les textes publics de l'AECG et de l'APS"}
               </span>
               <button
                 onClick={onToggleLang}
