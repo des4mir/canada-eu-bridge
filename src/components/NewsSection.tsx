@@ -56,7 +56,7 @@ export const NewsSection: React.FC<NewsSectionProps> = ({ currentLang, onAskAbou
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
           <div>
-            <div className="inline-flex flex-wrap items-center justify-center gap-1.5 px-3 py-1 rounded-full bg-purple-100 border border-purple-200 text-purple-800 text-sm font-semibold uppercase tracking-wider mb-2">
+            <div className="inline-flex items-center justify-center gap-1.5 px-3 py-1 rounded-full bg-purple-100 border border-purple-200 text-purple-800 text-sm font-semibold uppercase tracking-wider mb-2">
               <Newspaper className="w-3.5 h-3.5" />
               {t.news.title}
             </div>
@@ -136,7 +136,7 @@ export const NewsSection: React.FC<NewsSectionProps> = ({ currentLang, onAskAbou
                     {onAskAboutNews && (
                       <button
                         onClick={() => onAskAboutNews(article.title)}
-                        className="inline-flex flex-wrap items-center justify-center gap-1 font-semibold text-purple-700 hover:text-purple-900 transition-colors shrink-0"
+                        className="inline-flex items-center justify-center gap-1 font-semibold text-purple-700 hover:text-purple-900 transition-colors shrink-0"
                       >
                         <span>{currentLang === "en" ? "Ask AI Assistant" : "Interroger l'assistant"}</span>
                         <ArrowUpRight className="w-3.5 h-3.5" />

@@ -102,7 +102,7 @@ export const Footer: React.FC<FooterProps> = ({ currentLang, onToggleLang }) => 
                     href={link.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex flex-wrap items-center justify-center gap-1.5 hover:text-white transition-colors group"
+                    className="inline-flex items-center gap-1.5 hover:text-white transition-colors group text-left"
                   >
                     <span>{link.label}</span>
                     <ExternalLink className="w-3 h-3 text-slate-500 group-hover:text-slate-300" />
@@ -112,7 +112,7 @@ export const Footer: React.FC<FooterProps> = ({ currentLang, onToggleLang }) => 
               <li className="pt-2">
                 <button 
                   onClick={() => setIsPrivacyOpen(true)}
-                  className="inline-flex flex-wrap items-center justify-center gap-1.5 text-slate-300 hover:text-white transition-colors group underline underline-offset-2"
+                  className="inline-flex items-center gap-1.5 text-slate-300 hover:text-white transition-colors group underline underline-offset-2 text-left"
                 >
                   {currentLang === 'en' ? "Privacy Policy & Disclosures" : "Confidentialité et Divulgations"}
                 </button>
@@ -120,7 +120,7 @@ export const Footer: React.FC<FooterProps> = ({ currentLang, onToggleLang }) => 
               <li className="pt-2">
                 <button 
                   onClick={() => window.dispatchEvent(new Event('open-cookie-settings'))}
-                  className="inline-flex flex-wrap items-center justify-center gap-1.5 text-slate-300 hover:text-white transition-colors group underline underline-offset-2"
+                  className="inline-flex items-center gap-1.5 text-slate-300 hover:text-white transition-colors group underline underline-offset-2 text-left"
                 >
                   {currentLang === 'en' ? "Cookie Settings" : "Paramètres des cookies"}
                 </button>

@@ -45,7 +45,7 @@ export default function App() {
   const t = translations[currentLang];
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 flex flex-col font-sans selection:bg-blue-600 selection:text-white">
+    <div className="min-h-screen bg-white text-slate-900 flex flex-col font-sans selection:bg-blue-600 selection:text-white overflow-x-hidden w-full relative">
       {/* Top Navigation */}
       <Navbar
         currentLang={currentLang}

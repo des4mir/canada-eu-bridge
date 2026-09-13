@@ -51,10 +51,10 @@ export const Hero: React.FC<HeroProps> = ({ currentLang, onOpenChatWithTopic }) 
         </div>
 
         {/* Main CTA Actions */}
-        <div className="mt-8 flex flex-wrap items-center gap-3 sm:gap-4">
+        <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
           <button
             onClick={() => scrollToSection("visit")}
-            className="inline-flex flex-wrap items-center justify-center gap-2 px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-base transition-all shadow-sm hover:shadow-md active:scale-95"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-base transition-all shadow-sm hover:shadow-md active:scale-95"
           >
             <Compass className="w-4 h-4" />
             {t.hero.ctaVisit}
@@ -62,7 +62,7 @@ export const Hero: React.FC<HeroProps> = ({ currentLang, onOpenChatWithTopic }) 
 
           <button
             onClick={() => scrollToSection("invest")}
-            className="inline-flex flex-wrap items-center justify-center gap-2 px-5 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-base transition-all shadow-sm hover:shadow-md active:scale-95"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-base transition-all shadow-sm hover:shadow-md active:scale-95"
           >
             <TrendingUp className="w-4 h-4" />
             {t.hero.ctaInvest}
@@ -70,7 +70,7 @@ export const Hero: React.FC<HeroProps> = ({ currentLang, onOpenChatWithTopic }) 
 
           <button
             onClick={() => onOpenChatWithTopic?.(currentLang === "fr" ? "Comment se déroule le partenariat entre le Canada et l'UE ?" : "How does the partnership between Canada and the EU work?")}
-            className="inline-flex flex-wrap items-center justify-center gap-2 px-5 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white font-semibold text-base border border-slate-700 transition-all shadow-sm active:scale-95"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white font-semibold text-base border border-slate-700 transition-all shadow-sm active:scale-95 text-center leading-snug"
           >
             <Sparkles className="w-4 h-4 text-amber-400" />
             {t.hero.ctaChat}

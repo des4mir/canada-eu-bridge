@@ -19,7 +19,7 @@ export const VisitSection: React.FC<VisitSectionProps> = ({ currentLang, onAskAb
         
         {/* Section Header */}
         <div className="max-w-3xl mb-12">
-          <div className="inline-flex flex-wrap items-center justify-center gap-1.5 px-3 py-1 rounded-full bg-emerald-100 border border-emerald-200 text-emerald-800 text-sm font-semibold uppercase tracking-wider mb-3">
+          <div className="inline-flex items-center justify-center gap-1.5 px-3 py-1 rounded-full bg-emerald-100 border border-emerald-200 text-emerald-800 text-sm font-semibold uppercase tracking-wider mb-3">
             <Compass className="w-3.5 h-3.5" />
             {t.badge}
           </div>
@@ -35,10 +35,10 @@ export const VisitSection: React.FC<VisitSectionProps> = ({ currentLang, onAskAb
         </div>
 
         {/* Navigation Tabs for Visit Section */}
-        <div className="flex flex-wrap border-b border-slate-200 gap-4 sm:gap-8 mb-8 pb-1">
+        <div className="flex overflow-x-auto hide-scrollbar flex-nowrap border-b border-slate-200 gap-4 sm:gap-8 mb-8 pb-1">
           <button
             onClick={() => setActiveTab("destinations")}
-            className={`flex items-center gap-2 pb-3 text-base font-semibold border-b-2 transition-all ${
+            className={`flex items-center gap-2 pb-3 text-base font-semibold border-b-2 transition-all whitespace-nowrap shrink-0 ${
               activeTab === "destinations"
                 ? "border-emerald-600 text-emerald-700"
                 : "border-transparent text-slate-500 hover:text-slate-800 hover:border-slate-300"
@@ -49,7 +49,7 @@ export const VisitSection: React.FC<VisitSectionProps> = ({ currentLang, onAskAb
           </button>
           <button
             onClick={() => setActiveTab("eta")}
-            className={`flex items-center gap-2 pb-3 text-base font-semibold border-b-2 transition-all ${
+            className={`flex items-center gap-2 pb-3 text-base font-semibold border-b-2 transition-all whitespace-nowrap shrink-0 ${
               activeTab === "eta"
                 ? "border-emerald-600 text-emerald-700"
                 : "border-transparent text-slate-500 hover:text-slate-800 hover:border-slate-300"
@@ -60,7 +60,7 @@ export const VisitSection: React.FC<VisitSectionProps> = ({ currentLang, onAskAb
           </button>
           <button
             onClick={() => setActiveTab("tips")}
-            className={`flex items-center gap-2 pb-3 text-base font-semibold border-b-2 transition-all ${
+            className={`flex items-center gap-2 pb-3 text-base font-semibold border-b-2 transition-all whitespace-nowrap shrink-0 ${
               activeTab === "tips"
                 ? "border-emerald-600 text-emerald-700"
                 : "border-transparent text-slate-500 hover:text-slate-800 hover:border-slate-300"
@@ -96,7 +96,7 @@ export const VisitSection: React.FC<VisitSectionProps> = ({ currentLang, onAskAb
                   </p>
                 </div>
 
-                <div className="mt-6 pt-3 border-t border-slate-200/60 flex items-center justify-between">
+                <div className="mt-6 pt-3 border-t border-slate-200/60 flex flex-wrap items-center justify-between gap-3">
                   <button
                     onClick={() => onAskAboutTravel?.(`${currentLang === "fr" ? "Parle-moi de la visite dans la région : " : "Tell me about traveling to "} ${dest.region}`)}
                     className="text-sm font-semibold text-emerald-700 hover:text-emerald-900 flex items-center gap-1 transition-colors"
@@ -154,14 +154,14 @@ export const VisitSection: React.FC<VisitSectionProps> = ({ currentLang, onAskAb
                 href="https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/eta.html"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex flex-wrap items-center justify-center gap-2 px-4 py-2 rounded-lg bg-emerald-700 hover:bg-emerald-600 text-white text-sm sm:text-base font-semibold transition-all shadow-xs"
+                className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-emerald-700 hover:bg-emerald-600 text-white text-sm sm:text-base font-semibold transition-all shadow-xs"
               >
                 <span>{currentLang === "en" ? "Official Government eTA Portal" : "Portail Officiel AVE du Canada"}</span>
                 <Compass className="w-3.5 h-3.5" />
               </a>
               <button
                 onClick={() => onAskAboutTravel?.(currentLang === "fr" ? "Quelles sont les formalités de l'AVE pour un citoyen français ou européen ?" : "What are the exact eTA requirements for an EU citizen traveling to Canada?")}
-                className="inline-flex flex-wrap items-center justify-center gap-1.5 px-4 py-2 rounded-lg bg-white border border-slate-300 hover:bg-slate-50 text-slate-800 text-sm sm:text-base font-semibold transition-all shadow-2xs"
+                className="inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-lg bg-white border border-slate-300 hover:bg-slate-50 text-slate-800 text-sm sm:text-base font-semibold transition-all shadow-2xs"
               >
                 <Sparkles className="w-4 h-4 text-emerald-600" />
                 <span>{currentLang === "en" ? "Ask Assistant about eTA" : "Interroger l'assistant sur l'AVE"}</span>

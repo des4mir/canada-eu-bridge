@@ -25,7 +25,7 @@ export const InvestSection: React.FC<InvestSectionProps> = ({ currentLang, onAsk
         
         {/* Section Header */}
         <div className="max-w-3xl mb-12">
-          <div className="inline-flex flex-wrap items-center justify-center gap-1.5 px-3 py-1 rounded-full bg-blue-100 border border-blue-200 text-blue-800 text-sm font-semibold uppercase tracking-wider mb-3">
+          <div className="inline-flex items-center justify-center gap-1.5 px-3 py-1 rounded-full bg-blue-100 border border-blue-200 text-blue-800 text-sm font-semibold uppercase tracking-wider mb-3">
             <TrendingUp className="w-3.5 h-3.5" />
             {t.badge}
           </div>
@@ -41,10 +41,10 @@ export const InvestSection: React.FC<InvestSectionProps> = ({ currentLang, onAsk
         </div>
 
         {/* Sub-navigation Tabs */}
-        <div className="flex flex-wrap border-b border-slate-200 gap-4 sm:gap-8 mb-8 pb-1">
+        <div className="flex overflow-x-auto hide-scrollbar flex-nowrap border-b border-slate-200 gap-4 sm:gap-8 mb-8 pb-1">
           <button
             onClick={() => setActiveTab("sectors")}
-            className={`flex items-center gap-2 pb-3 text-base font-semibold border-b-2 transition-all ${
+            className={`flex items-center gap-2 pb-3 text-base font-semibold border-b-2 transition-all whitespace-nowrap shrink-0 ${
               activeTab === "sectors"
                 ? "border-blue-600 text-blue-700"
                 : "border-transparent text-slate-500 hover:text-slate-800 hover:border-slate-300"
@@ -55,7 +55,7 @@ export const InvestSection: React.FC<InvestSectionProps> = ({ currentLang, onAsk
           </button>
           <button
             onClick={() => setActiveTab("ceta")}
-            className={`flex items-center gap-2 pb-3 text-base font-semibold border-b-2 transition-all ${
+            className={`flex items-center gap-2 pb-3 text-base font-semibold border-b-2 transition-all whitespace-nowrap shrink-0 ${
               activeTab === "ceta"
                 ? "border-blue-600 text-blue-700"
                 : "border-transparent text-slate-500 hover:text-slate-800 hover:border-slate-300"
@@ -66,7 +66,7 @@ export const InvestSection: React.FC<InvestSectionProps> = ({ currentLang, onAsk
           </button>
           <button
             onClick={() => setActiveTab("advantages")}
-            className={`flex items-center gap-2 pb-3 text-base font-semibold border-b-2 transition-all ${
+            className={`flex items-center gap-2 pb-3 text-base font-semibold border-b-2 transition-all whitespace-nowrap shrink-0 ${
               activeTab === "advantages"
                 ? "border-blue-600 text-blue-700"
                 : "border-transparent text-slate-500 hover:text-slate-800 hover:border-slate-300"
@@ -103,7 +103,7 @@ export const InvestSection: React.FC<InvestSectionProps> = ({ currentLang, onAsk
                   </p>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+                <div className="mt-6 pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3">
                   <span className="text-sm text-slate-500 font-medium">
                     {currentLang === "en" ? "CETA-aligned priority sector" : "Secteur prioritaire sous l'AECG"}
                   </span>
@@ -139,7 +139,7 @@ export const InvestSection: React.FC<InvestSectionProps> = ({ currentLang, onAsk
                 </p>
                 <button
                   onClick={() => onAskAboutInvest?.(benefit.title)}
-                  className="mt-4 text-sm font-semibold text-blue-700 hover:text-blue-900 inline-flex flex-wrap items-center justify-center gap-1"
+                  className="mt-4 text-sm font-semibold text-blue-700 hover:text-blue-900 inline-flex items-center justify-center gap-1"
                 >
                   <Sparkles className="w-3.5 h-3.5" />
                   <span>{currentLang === "en" ? "Learn more via Assistant" : "En savoir plus avec l'assistant"}</span>

@@ -114,7 +114,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentLang, onToggleLang, onOpe
         <div
           ref={measureNavRef}
           aria-hidden="true"
-          className="flex items-center gap-1 xl:gap-2 absolute top-0 left-0 invisible pointer-events-none -z-10"
+          className="flex items-center gap-1 xl:gap-2 fixed top-0 left-[-9999px] invisible pointer-events-none -z-10"
         >
           {navLinks.map(({ id, label, icon: Icon, color }) => (
             <span key={id} className="flex items-center gap-1.5 px-3 py-2 text-base font-medium whitespace-nowrap">
