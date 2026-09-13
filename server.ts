@@ -196,11 +196,18 @@ app.get("/api/news", async (req: Request, res: Response) => {
 
     const apiKey = process.env.NEWS_API_KEY;
     if (!apiKey) {
-      // Return 503 if API key is not configured so frontend can fallback
-      return res.status(503).json({
-        error: "NEWS_API_KEY is not configured in server environment.",
-      });
+      // Return static news mapped to GNews format as fallback
+      const fallbackArticles = STATIC_NEWS_ITEMS.map(item => ({
+        title: item.titleEn,
+        description: item.summaryEn,
+        publishedAt: new Date().toISOString(),
+        source: { name: item.source },
+        url: "#"
+      }));
+      return res.json({ articles: fallbackArticles });
     }
+
+    // GNews API endpoint fetching specific relevant topics
 
     // GNews API endpoint fetching specific relevant topics
     const searchQuery = encodeURIComponent(
