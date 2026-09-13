@@ -189,27 +189,23 @@ const NEWS_CACHE_DURATION = 30 * 60 * 1000; // 30 minutes
 // News API Proxy Endpoint
 app.get("/api/news", async (req: Request, res: Response) => {
   try {
-    // Return cached data if valid
     if (newsCache && Date.now() - newsCache.timestamp < NEWS_CACHE_DURATION) {
       return res.json({ articles: newsCache.data });
     }
 
+    const getFallbackArticles = () => STATIC_NEWS_ITEMS.map(item => ({
+      title: item.titleEn,
+      description: item.summaryEn,
+      publishedAt: new Date().toISOString(),
+      source: { name: item.source },
+      url: "#"
+    }));
+
     const apiKey = process.env.NEWS_API_KEY;
     if (!apiKey) {
-      // Return static news mapped to GNews format as fallback
-      const fallbackArticles = STATIC_NEWS_ITEMS.map(item => ({
-        title: item.titleEn,
-        description: item.summaryEn,
-        publishedAt: new Date().toISOString(),
-        source: { name: item.source },
-        url: "#"
-      }));
-      return res.json({ articles: fallbackArticles });
+      return res.json({ articles: getFallbackArticles() });
     }
 
-    // GNews API endpoint fetching specific relevant topics
-
-    // GNews API endpoint fetching specific relevant topics
     const searchQuery = encodeURIComponent(
       '"Canada tourism" OR "Canada EU trade" OR "CETA" OR "Canada foreign investment"',
     );
@@ -220,29 +216,31 @@ app.get("/api/news", async (req: Request, res: Response) => {
     try {
       data = await response.json();
     } catch (e) {
-      console.error("Failed to parse JSON from GNews API");
-      return res.status(500).json({
-        error: "Failed to fetch articles from news provider (Invalid JSON)",
-      });
+      console.warn("Failed to parse JSON from GNews API, falling back to static news");
+      return res.json({ articles: getFallbackArticles() });
     }
 
-    if (data.articles) {
+    if (data && data.articles && Array.isArray(data.articles)) {
       newsCache = {
         timestamp: Date.now(),
         data: data.articles,
       };
       return res.json({ articles: data.articles });
     } else {
-      console.error("GNews API response error:", data);
-      return res
-        .status(500)
-        .json({ error: "Failed to fetch articles from news provider" });
+      console.warn("GNews API warning/error (falling back to static):", data);
+      return res.json({ articles: getFallbackArticles() });
     }
   } catch (error: any) {
     console.error("Backend News API Proxy Error:", error);
-    return res
-      .status(500)
-      .json({ error: "Internal server error while fetching news." });
+    // Final safety fallback
+    const fallbackArticles = STATIC_NEWS_ITEMS.map(item => ({
+      title: item.titleEn,
+      description: item.summaryEn,
+      publishedAt: new Date().toISOString(),
+      source: { name: item.source },
+      url: "#"
+    }));
+    return res.json({ articles: fallbackArticles });
   }
 });
 
