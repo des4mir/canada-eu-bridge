@@ -18,7 +18,7 @@ export const NewsSection: React.FC<NewsSectionProps> = ({ currentLang, onAskAbou
     const fetchNews = async () => {
       try {
         setLoading(true);
-        const res = await fetch("/api/news");
+        const res = await fetch(`/api/news?lang=${currentLang}`);
         let data;
         const responseText = await res.text();
         try {

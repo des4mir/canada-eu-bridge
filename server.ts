@@ -180,22 +180,25 @@ app.post("/api/chat", chatLimiter, async (req: Request, res: Response) => {
 
 // Simple in-memory cache for news to avoid hitting API limits
 interface NewsCache {
-  timestamp: number;
-  data: any;
+  en: { timestamp: number; data: any; } | null;
+  fr: { timestamp: number; data: any; } | null;
 }
-let newsCache: NewsCache | null = null;
+let newsCache: NewsCache = { en: null, fr: null };
 const NEWS_CACHE_DURATION = 30 * 60 * 1000; // 30 minutes
 
 // News API Proxy Endpoint
 app.get("/api/news", async (req: Request, res: Response) => {
   try {
-    if (newsCache && Date.now() - newsCache.timestamp < NEWS_CACHE_DURATION) {
-      return res.json({ articles: newsCache.data });
+    const lang = (req.query.lang as string) === 'fr' ? 'fr' : 'en';
+    const cacheEntry = newsCache[lang];
+
+    if (cacheEntry && Date.now() - cacheEntry.timestamp < NEWS_CACHE_DURATION) {
+      return res.json({ articles: cacheEntry.data });
     }
 
     const getFallbackArticles = () => STATIC_NEWS_ITEMS.map(item => ({
-      title: item.titleEn,
-      description: item.summaryEn,
+      title: lang === 'fr' ? item.titleFr : item.titleEn,
+      description: lang === 'fr' ? item.summaryFr : item.summaryEn,
       publishedAt: new Date().toISOString(),
       source: { name: item.source },
       url: "#"
@@ -206,10 +209,12 @@ app.get("/api/news", async (req: Request, res: Response) => {
       return res.json({ articles: getFallbackArticles() });
     }
 
-    const searchQuery = encodeURIComponent(
-      '"Canada tourism" OR "Canada EU trade" OR "CETA" OR "Canada foreign investment"',
-    );
-    const url = `https://gnews.io/api/v4/search?q=${searchQuery}&lang=en&max=4&apikey=${apiKey}`;
+    // French query uses "Canada" and French terms like "UE", "Union Européenne", "AECG", "commerce", "investissement", "tourisme"
+    const searchQuery = lang === 'fr' 
+      ? encodeURIComponent('"Canada" AND ("AECG" OR "Union Européenne" OR "UE" OR "Europe") AND ("commerce" OR "investissement" OR "tourisme" OR "partenariat")')
+      : encodeURIComponent('"Canada" AND ("CETA" OR "European Union" OR "EU" OR "Europe") AND ("trade" OR "investment" OR "tourism" OR "partnership")');
+      
+    const url = `https://gnews.io/api/v4/search?q=${searchQuery}&lang=${lang}&max=4&apikey=${apiKey}`;
 
     const response = await fetch(url);
     let data;
@@ -221,7 +226,7 @@ app.get("/api/news", async (req: Request, res: Response) => {
     }
 
     if (data && data.articles && Array.isArray(data.articles)) {
-      newsCache = {
+      newsCache[lang] = {
         timestamp: Date.now(),
         data: data.articles,
       };
@@ -233,9 +238,10 @@ app.get("/api/news", async (req: Request, res: Response) => {
   } catch (error: any) {
     console.error("Backend News API Proxy Error:", error);
     // Final safety fallback
+    const lang = (req.query.lang as string) === 'fr' ? 'fr' : 'en';
     const fallbackArticles = STATIC_NEWS_ITEMS.map(item => ({
-      title: item.titleEn,
-      description: item.summaryEn,
+      title: lang === 'fr' ? item.titleFr : item.titleEn,
+      description: lang === 'fr' ? item.summaryFr : item.summaryEn,
       publishedAt: new Date().toISOString(),
       source: { name: item.source },
       url: "#"
