@@ -78,7 +78,15 @@ export const Navbar: React.FC<NavbarProps> = ({ currentLang, onToggleLang, onOpe
           className="flex items-center gap-2 xl:gap-3 group focus:outline-none shrink-0"
           aria-label="Canada-EU Bridge Home"
         >
-          <img src="/logo.svg" alt="Canada-EU Bridge Logo" className="w-11 h-11 sm:w-12 sm:h-12 object-contain" />
+          <img 
+            src="/logo.svg" 
+            alt="Canada-EU Bridge Logo" 
+            width="64"
+            height="64"
+            fetchPriority="high"
+            decoding="async"
+            className="w-11 h-11 sm:w-12 sm:h-12 lg:w-16 lg:h-16 object-contain" 
+          />
           <div className="hidden sm:block">
             <div className="flex items-center gap-1.5 xl:gap-2">
               <span className="font-bold text-base xl:text-lg tracking-tight text-white group-hover:text-blue-300 transition-colors whitespace-nowrap">

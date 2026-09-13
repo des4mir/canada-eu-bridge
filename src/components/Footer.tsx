@@ -38,7 +38,15 @@ export const Footer: React.FC<FooterProps> = ({ currentLang, onToggleLang }) => 
           
           <div className="md:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
-              <img src="/logo.svg" alt="" className="w-8 h-8 object-contain" />
+              <img 
+                src="/logo.svg" 
+                alt="" 
+                width="56"
+                height="56"
+                loading="lazy"
+                decoding="async"
+                className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 object-contain" 
+              />
               <span className="font-bold text-lg text-white">
                 {currentLang === "en" ? "Canada-EU Bridge" : "Pont Canada-UE"}
               </span>
