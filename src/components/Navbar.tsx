@@ -67,7 +67,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentLang, onToggleLang, onOpe
   ];
 
   return (
-    <header className="sticky top-0 z-40 bg-slate-900/95 backdrop-blur-md border-b border-slate-800 text-white shadow-md">
+    <header className="sticky top-0 z-40 bg-slate-950/95 border-slate-900 backdrop-blur-md border-b border-slate-800 text-white shadow-sm">
       <div ref={containerRef} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-2 relative">
         
         {/* Brand Logo */}
@@ -89,7 +89,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentLang, onToggleLang, onOpe
           />
           <div className="hidden sm:block">
             <div className="flex items-center gap-1.5 xl:gap-2">
-              <span className="font-bold text-base xl:text-lg tracking-tight text-white group-hover:text-blue-300 transition-colors whitespace-nowrap">
+              <span className="font-medium text-base xl:text-lg tracking-tight text-white group-hover:text-blue-300 transition-colors whitespace-nowrap">
                 {currentLang === "en" ? "Canada-EU Bridge" : "Pont Canada-UE"}
               </span>
               <span className="text-sm xl:text-sm font-semibold uppercase px-1.5 py-0.5 rounded bg-blue-500/20 text-blue-300 border border-blue-400/30 whitespace-nowrap hidden md:inline-block">
@@ -144,9 +144,9 @@ export const Navbar: React.FC<NavbarProps> = ({ currentLang, onToggleLang, onOpe
             aria-label="Toggle language"
           >
             <Globe className="w-3.5 h-3.5 xl:w-4 xl:h-4 text-blue-400 shrink-0" />
-            <span className={currentLang === "en" ? "text-amber-400 font-bold" : "text-slate-400"}>EN</span>
+            <span className={currentLang === "en" ? "text-amber-400 font-medium" : "text-slate-400"}>EN</span>
             <span className="text-slate-600">/</span>
-            <span className={currentLang === "fr" ? "text-amber-400 font-bold" : "text-slate-400"}>FR</span>
+            <span className={currentLang === "fr" ? "text-amber-400 font-medium" : "text-slate-400"}>FR</span>
           </button>
 
           {/* Chat Assistant Trigger */}

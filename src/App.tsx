@@ -9,7 +9,6 @@ import { InvestSection } from "./components/InvestSection";
 import { PartnershipSection } from "./components/PartnershipSection";
 import { Footer } from "./components/Footer";
 import { ChatAssistant } from "./components/ChatAssistant";
-import { DisclaimerBanner } from "./components/DisclaimerBanner";
 import { translations } from "./data/translations";
 import { AdSlot } from "./components/AdSlot";
 import { CookieConsent } from "./components/CookieConsent";
@@ -53,7 +52,6 @@ export default function App() {
         onOpenChat={() => setIsChatOpen(true)}
       />
 
-      <DisclaimerBanner currentLang={currentLang} />
 
       <main className="flex-1">
         {/* Transatlantic Hero Banner */}

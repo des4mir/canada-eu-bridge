@@ -172,7 +172,7 @@ export const ChatAssistant: React.FC<ChatAssistantProps> = ({
 
   return (
     <div
-      className={`fixed z-50 transition-all duration-200 flex flex-col bg-white shadow-2xl border border-slate-300 rounded-2xl overflow-hidden ${
+      className={`fixed z-50 transition-all duration-200 flex flex-col bg-white shadow-lg border border-slate-300 rounded-2xl overflow-hidden ${
         isExpanded
           ? "bottom-4 right-4 left-4 sm:left-auto sm:w-[650px] h-[85vh]"
           : "bottom-4 right-4 left-4 sm:left-auto sm:w-[420px] h-[580px] max-h-[90vh]"
@@ -181,14 +181,14 @@ export const ChatAssistant: React.FC<ChatAssistantProps> = ({
       aria-label={t.title}
     >
       {/* Header */}
-      <div className="bg-gradient-to-r from-blue-900 via-indigo-900 to-blue-950 text-white px-4 py-3 flex items-center justify-between shadow-xs select-none">
+      <div className="bg-slate-950 border-b border-slate-900 text-white px-4 py-3 flex items-center justify-between shadow-xs select-none">
         <div className="flex items-center gap-2.5">
           <div className="w-8 h-8 rounded-lg bg-blue-500/20 border border-blue-400/30 flex items-center justify-center text-amber-300">
             <Bot className="w-4 h-4" />
           </div>
           <div>
             <div className="flex items-center gap-1.5">
-              <h2 className="text-base font-bold tracking-tight">
+              <h2 className="text-base font-medium tracking-tight">
                 {t.title}
               </h2>
               <span className="text-sm px-1.5 py-0.2 rounded bg-amber-400/20 text-amber-300 border border-amber-400/30 font-semibold">

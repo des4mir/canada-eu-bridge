@@ -23,7 +23,7 @@ export const VisitSection: React.FC<VisitSectionProps> = ({ currentLang, onAskAb
             <Compass className="w-3.5 h-3.5" />
             {t.badge}
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-semibold text-slate-900 tracking-tight">
             {t.title}
           </h2>
           <p className="text-base sm:text-lg text-emerald-800 font-medium mt-1">
@@ -77,7 +77,7 @@ export const VisitSection: React.FC<VisitSectionProps> = ({ currentLang, onAskAb
             {t.destinations.map((dest, idx) => (
               <div
                 key={idx}
-                className="bg-slate-50 rounded-2xl border border-slate-200/90 p-6 hover:shadow-md hover:border-emerald-300 transition-all flex flex-col justify-between"
+                className="bg-slate-50 rounded-2xl border border-slate-200/90 p-6 hover:-translate-y-0.5 hover:shadow-sm hover:border-emerald-300 transition-all flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-2">
@@ -85,7 +85,7 @@ export const VisitSection: React.FC<VisitSectionProps> = ({ currentLang, onAskAb
                       {dest.tag}
                     </span>
                   </div>
-                  <h3 className="text-lg font-bold text-slate-900 mt-2">
+                  <h3 className="text-lg font-medium text-slate-900 mt-2">
                     {dest.region}
                   </h3>
                   <p className="text-sm font-semibold text-emerald-700 mt-0.5">
@@ -114,7 +114,7 @@ export const VisitSection: React.FC<VisitSectionProps> = ({ currentLang, onAskAb
         {activeTab === "eta" && (
           <div className="bg-gradient-to-br from-emerald-50/70 to-slate-50 rounded-2xl border border-emerald-200/80 p-6 sm:p-8 shadow-xs">
             <div className="max-w-3xl">
-              <div className="flex items-center gap-2 text-emerald-800 font-bold text-lg mb-2">
+              <div className="flex items-center gap-2 text-emerald-800 font-medium text-lg mb-2">
                 <FileText className="w-5 h-5 text-emerald-600" />
                 <h3>{t.etaBox.title}</h3>
               </div>
@@ -127,10 +127,10 @@ export const VisitSection: React.FC<VisitSectionProps> = ({ currentLang, onAskAb
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
               {t.etaBox.steps.map((stepItem, sIdx) => (
                 <div key={sIdx} className="bg-white rounded-xl p-4 border border-emerald-100 shadow-2xs">
-                  <div className="w-7 h-7 rounded-full bg-emerald-600 text-white font-bold text-sm flex items-center justify-center mb-2">
+                  <div className="w-7 h-7 rounded-full bg-emerald-600 text-white font-medium text-sm flex items-center justify-center mb-2">
                     {stepItem.step}
                   </div>
-                  <h4 className="text-base font-bold text-slate-900">
+                  <h4 className="text-base font-medium text-slate-900">
                     {stepItem.title}
                   </h4>
                   <p className="text-sm text-slate-600 mt-1">
@@ -180,7 +180,7 @@ export const VisitSection: React.FC<VisitSectionProps> = ({ currentLang, onAskAb
                   <div className="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center text-emerald-700 mb-4">
                     {idx === 0 ? <Plane className="w-5 h-5" /> : idx === 1 ? <CheckCircle2 className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
                   </div>
-                  <h3 className="text-base font-bold text-slate-900">
+                  <h3 className="text-base font-medium text-slate-900">
                     {tip.title}
                   </h3>
                   <p className="text-base text-slate-600 mt-2 leading-relaxed">
@@ -203,7 +203,7 @@ export const VisitSection: React.FC<VisitSectionProps> = ({ currentLang, onAskAb
           
           <div className="mt-8 pt-6 border-t border-slate-200">
             <div className="bg-emerald-50 rounded-xl p-6 border border-emerald-100 flex-1 w-full">
-              <h4 className="font-bold text-emerald-900 mb-2">{currentLang === "en" ? "Travel Partners" : "Partenaires de voyage"}</h4>
+              <h4 className="font-medium text-emerald-900 mb-2">{currentLang === "en" ? "Travel Partners" : "Partenaires de voyage"}</h4>
               <p className="text-base text-emerald-800 mb-4">{currentLang === "en" ? "Ready to plan your trip? Compare flights and accommodation:" : "Prêt à planifier votre voyage ? Comparez les vols et l'hébergement :" }</p>
               <div className="flex flex-wrap gap-4">
                 <AffiliateLink url="https://www.booking.com/" partnerName="Booking.com" buttonText={currentLang === "en" ? "Check Hotel Prices" : "Voir les prix des hôtels"} />

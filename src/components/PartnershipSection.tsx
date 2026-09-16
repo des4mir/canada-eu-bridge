@@ -22,7 +22,7 @@ export const PartnershipSection: React.FC<PartnershipSectionProps> = ({ currentL
             <Handshake className="w-3.5 h-3.5" />
             {t.badge}
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-semibold text-slate-900 tracking-tight">
             {t.title}
           </h2>
           <p className="text-base sm:text-lg text-indigo-900 font-medium mt-1">
@@ -65,14 +65,14 @@ export const PartnershipSection: React.FC<PartnershipSectionProps> = ({ currentL
             {t.pillars.map((pillar, pIdx) => (
               <div
                 key={pIdx}
-                className="bg-slate-50 rounded-2xl border border-slate-200 p-6 sm:p-7 hover:shadow-md hover:border-indigo-300 transition-all flex flex-col justify-between"
+                className="bg-slate-50 rounded-2xl border border-slate-200 p-6 sm:p-7 hover:-translate-y-0.5 hover:shadow-sm hover:border-indigo-300 transition-all flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 rounded-xl bg-indigo-100 flex items-center justify-center text-indigo-700 font-bold">
+                    <div className="w-10 h-10 rounded-xl bg-indigo-100 flex items-center justify-center text-indigo-700 font-medium">
                       {pIdx === 0 ? <Scale className="w-5 h-5" /> : pIdx === 1 ? <Globe2 className="w-5 h-5" /> : pIdx === 2 ? <Sparkles className="w-5 h-5" /> : <Shield className="w-5 h-5" />}
                     </div>
-                    <h3 className="text-lg font-bold text-slate-900">
+                    <h3 className="text-lg font-medium text-slate-900">
                       {pillar.title}
                     </h3>
                   </div>
@@ -108,10 +108,10 @@ export const PartnershipSection: React.FC<PartnershipSectionProps> = ({ currentL
                 
                 <div className="bg-slate-50 border border-slate-200 rounded-2xl p-5 sm:p-6 hover:shadow-xs hover:border-indigo-300 transition-all">
                   <div className="flex items-center gap-3">
-                    <span className="text-sm font-extrabold px-3 py-1 rounded-full bg-indigo-600 text-white shadow-2xs">
+                    <span className="text-sm font-semibold px-3 py-1 rounded-full bg-indigo-600 text-white shadow-2xs">
                       {milestone.year}
                     </span>
-                    <h3 className="text-base sm:text-lg font-bold text-slate-900">
+                    <h3 className="text-base sm:text-lg font-medium text-slate-900">
                       {milestone.title}
                     </h3>
                   </div>
@@ -138,7 +138,7 @@ export const PartnershipSection: React.FC<PartnershipSectionProps> = ({ currentL
               <Scale className="w-5 h-5 text-amber-300" />
             </div>
             <div>
-              <h3 className="text-lg font-bold text-white">
+              <h3 className="text-lg font-medium text-white">
                 {currentLang === "en" ? "Grounded in Democratic Values & International Law" : "Fondé sur les valeurs démocratiques et le droit international"}
               </h3>
               <p className="text-sm sm:text-base text-slate-300 mt-1 leading-relaxed max-w-3xl">

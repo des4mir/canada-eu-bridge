@@ -29,7 +29,7 @@ export const InvestSection: React.FC<InvestSectionProps> = ({ currentLang, onAsk
             <TrendingUp className="w-3.5 h-3.5" />
             {t.badge}
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-semibold text-slate-900 tracking-tight">
             {t.title}
           </h2>
           <p className="text-base sm:text-lg text-blue-800 font-medium mt-1">
@@ -83,7 +83,7 @@ export const InvestSection: React.FC<InvestSectionProps> = ({ currentLang, onAsk
             {t.sectors.map((sec, idx) => (
               <div
                 key={idx}
-                className="bg-white rounded-2xl border border-slate-200 p-6 hover:shadow-md hover:border-blue-300 transition-all flex flex-col justify-between"
+                className="bg-white rounded-2xl border border-slate-200 p-6 hover:-translate-y-0.5 hover:shadow-sm hover:border-blue-300 transition-all flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-3">
@@ -95,7 +95,7 @@ export const InvestSection: React.FC<InvestSectionProps> = ({ currentLang, onAsk
                     </span>
                   </div>
 
-                  <h3 className="text-lg font-bold text-slate-900 mt-2">
+                  <h3 className="text-lg font-medium text-slate-900 mt-2">
                     {sec.title}
                   </h3>
                   <p className="text-base text-slate-600 mt-2 leading-relaxed">
@@ -128,10 +128,10 @@ export const InvestSection: React.FC<InvestSectionProps> = ({ currentLang, onAsk
                 key={bIdx}
                 className="bg-white rounded-2xl border border-blue-200/80 p-6 shadow-xs hover:border-blue-400 transition-all"
               >
-                <div className="w-8 h-8 rounded-lg bg-blue-100 text-blue-800 flex items-center justify-center font-bold text-base mb-3">
+                <div className="w-8 h-8 rounded-lg bg-blue-100 text-blue-800 flex items-center justify-center font-medium text-base mb-3">
                   0{bIdx + 1}
                 </div>
-                <h3 className="text-base font-bold text-slate-900">
+                <h3 className="text-base font-medium text-slate-900">
                   {benefit.title}
                 </h3>
                 <p className="text-base text-slate-600 mt-2 leading-relaxed">
@@ -158,10 +158,10 @@ export const InvestSection: React.FC<InvestSectionProps> = ({ currentLang, onAsk
                 className="bg-white rounded-2xl border border-slate-200 p-6 flex flex-col justify-between"
               >
                 <div>
-                  <div className="w-10 h-10 rounded-xl bg-amber-100 flex items-center justify-center text-amber-800 font-bold mb-4">
+                  <div className="w-10 h-10 rounded-xl bg-amber-100 flex items-center justify-center text-amber-800 font-medium mb-4">
                     <Briefcase className="w-5 h-5" />
                   </div>
-                  <h3 className="text-base font-bold text-slate-900">
+                  <h3 className="text-base font-medium text-slate-900">
                     {adv.title}
                   </h3>
                   <p className="text-base text-slate-600 mt-2 leading-relaxed">
@@ -186,7 +186,7 @@ export const InvestSection: React.FC<InvestSectionProps> = ({ currentLang, onAsk
         {/* Federal Agency Partner Footer Box */}
         <div className="mt-10 bg-blue-900 text-white rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-md">
           <div>
-            <h3 className="text-lg font-bold">
+            <h3 className="text-lg font-medium">
               {currentLang === "en" ? "Ready to expand to Canada under CETA?" : "Prêt à vous implanter au Canada grâce à l'AECG ?"}
             </h3>
             <p className="text-sm sm:text-base text-blue-200 mt-1 max-w-xl">
@@ -200,7 +200,7 @@ export const InvestSection: React.FC<InvestSectionProps> = ({ currentLang, onAsk
               href="https://www.investcanada.ca"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold text-sm sm:text-base transition-all shadow-sm"
+              className="px-4 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-medium text-sm sm:text-base transition-all shadow-sm"
             >
               {currentLang === "en" ? "Visit Invest in Canada" : "Consulter Investir au Canada"}
             </a>

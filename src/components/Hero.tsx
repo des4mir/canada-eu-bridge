@@ -1,6 +1,7 @@
 import React from "react";
 import { Compass, TrendingUp, Sparkles, ShieldCheck, ArrowRight } from "lucide-react";
 import { Language } from "../types";
+import { DisclaimerBanner } from "./DisclaimerBanner";
 import { translations } from "../data/translations";
 
 interface HeroProps {
@@ -19,16 +20,14 @@ export const Hero: React.FC<HeroProps> = ({ currentLang, onOpenChatWithTopic }) 
   };
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 text-white pt-12 pb-16 lg:pt-20 lg:pb-24 border-b border-slate-800">
+    <section className="relative overflow-hidden bg-slate-950 text-white pt-16 pb-20 lg:pt-24 lg:pb-32 border-b border-slate-900">
       {/* Subtle geometric background accents */}
-      <div className="absolute inset-0 opacity-15 pointer-events-none overflow-hidden">
-        <div className="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-blue-600 blur-3xl" />
-        <div className="absolute top-1/2 -right-24 w-96 h-96 rounded-full bg-red-600 blur-3xl" />
-        <div className="absolute bottom-0 left-1/3 w-80 h-80 rounded-full bg-amber-500 blur-3xl opacity-50" />
-      </div>
+      
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
+        <DisclaimerBanner currentLang={currentLang} />
+
         {/* Bilateral Tag Badge */}
         <div className="inline-flex flex-wrap items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-800/80 border border-slate-700/80 text-sm sm:text-base font-medium text-slate-300 mb-6 backdrop-blur-sm shadow-sm">
           <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
@@ -54,7 +53,7 @@ export const Hero: React.FC<HeroProps> = ({ currentLang, onOpenChatWithTopic }) 
         <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
           <button
             onClick={() => scrollToSection("visit")}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-base transition-all shadow-sm hover:shadow-md active:scale-95"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-sm bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-base transition-all shadow-sm hover:shadow-md active:scale-95"
           >
             <Compass className="w-4 h-4" />
             {t.hero.ctaVisit}
@@ -62,7 +61,7 @@ export const Hero: React.FC<HeroProps> = ({ currentLang, onOpenChatWithTopic }) 
 
           <button
             onClick={() => scrollToSection("invest")}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-base transition-all shadow-sm hover:shadow-md active:scale-95"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-sm bg-blue-600 hover:bg-blue-500 text-white font-semibold text-base transition-all shadow-sm hover:shadow-md active:scale-95"
           >
             <TrendingUp className="w-4 h-4" />
             {t.hero.ctaInvest}
@@ -70,7 +69,7 @@ export const Hero: React.FC<HeroProps> = ({ currentLang, onOpenChatWithTopic }) 
 
           <button
             onClick={() => onOpenChatWithTopic?.(currentLang === "fr" ? "Comment se déroule le partenariat entre le Canada et l'UE ?" : "How does the partnership between Canada and the EU work?")}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white font-semibold text-base border border-slate-700 transition-all shadow-sm active:scale-95 text-center leading-snug"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-sm bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white font-semibold text-base transition-all shadow-sm active:scale-95 text-center leading-snug"
           >
             <Sparkles className="w-4 h-4 text-amber-400" />
             {t.hero.ctaChat}
@@ -79,19 +78,19 @@ export const Hero: React.FC<HeroProps> = ({ currentLang, onOpenChatWithTopic }) 
         </div>
 
         {/* Bilateral Stats Bento Row */}
-        <div className="mt-12 lg:mt-16 grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+        <div className="mt-16 lg:mt-24 grid grid-cols-2 md:grid-cols-4 border-t border-slate-800/60 pt-8 gap-y-8">
           {t.hero.stats.map((stat, idx) => (
             <div
               key={idx}
-              className="bg-slate-800/60 border border-slate-700/60 rounded-2xl p-4 sm:p-5 backdrop-blur-sm hover:border-slate-600 transition-all"
+              className={`flex flex-col ${idx !== 0 && idx !== 2 ? 'md:pl-8 md:border-l border-slate-800/60' : ''} ${idx % 2 !== 0 ? 'pl-6 border-l border-slate-800/60 md:border-l-0 md:pl-0' : ''}`}
             >
-              <span className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
+              <span className="text-3xl sm:text-4xl lg:text-5xl font-light text-white tracking-tight font-serif mb-2">
                 {stat.value}
               </span>
-              <h2 className="text-base font-semibold text-blue-300 mt-1">
+              <h2 className="text-sm font-semibold text-slate-200 uppercase tracking-widest mb-1">
                 {stat.label}
               </h2>
-              <p className="text-sm text-slate-400 mt-0.5">
+              <p className="text-sm text-slate-400">
                 {stat.sub}
               </p>
             </div>

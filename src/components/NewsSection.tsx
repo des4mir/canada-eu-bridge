@@ -60,7 +60,7 @@ export const NewsSection: React.FC<NewsSectionProps> = ({ currentLang, onAskAbou
               <Newspaper className="w-3.5 h-3.5" />
               {t.news.title}
             </div>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+            <h2 className="text-2xl sm:text-3xl font-semibold text-slate-900 tracking-tight">
               {currentLang === "en" ? "Live Updates" : "Mises à jour en direct"}
             </h2>
             <p className="text-base sm:text-base text-slate-600 mt-1 max-w-2xl">
@@ -100,7 +100,7 @@ export const NewsSection: React.FC<NewsSectionProps> = ({ currentLang, onAskAbou
               return (
                 <article
                   key={idx}
-                  className="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-xs hover:shadow-md hover:border-purple-200 transition-all flex flex-col justify-between"
+                  className="bg-white rounded-2xl border border-slate-200/80 p-6 shadow-xs hover:-translate-y-0.5 hover:shadow-sm hover:border-purple-200 transition-all flex flex-col justify-between"
                 >
                   <div>
                     <div className="flex items-center justify-between gap-2 mb-3">
@@ -113,7 +113,7 @@ export const NewsSection: React.FC<NewsSectionProps> = ({ currentLang, onAskAbou
                       </div>
                     </div>
                     
-                    <h3 className="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-purple-700 transition-colors line-clamp-2">
+                    <h3 className="text-lg sm:text-xl font-medium text-slate-900 group-hover:text-purple-700 transition-colors line-clamp-2">
                       {article.title}
                     </h3>
                     

@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
+}
+
+
+
 html, body {
   overflow-x: hidden;
   width: 100%;
@@ -23,4 +30,10 @@ html {
 .hide-scrollbar {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
+}
+
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+  }
 }
