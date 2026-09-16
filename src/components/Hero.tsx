@@ -82,17 +82,19 @@ export const Hero: React.FC<HeroProps> = ({ currentLang, onOpenChatWithTopic }) 
           {t.hero.stats.map((stat, idx) => (
             <div
               key={idx}
-              className={`flex flex-col ${idx !== 0 && idx !== 2 ? 'md:pl-8 md:border-l border-slate-800/60' : ''} ${idx % 2 !== 0 ? 'pl-6 border-l border-slate-800/60 md:border-l-0 md:pl-0' : ''}`}
+              className={`flex flex-col justify-start ${idx !== 0 && idx !== 2 ? 'md:pl-8 md:border-l border-slate-800/60' : ''} ${idx % 2 !== 0 ? 'pl-6 border-l border-slate-800/60 md:border-l-0 md:pl-0' : ''}`}
             >
-              <span className="text-3xl sm:text-4xl lg:text-5xl font-light text-white tracking-tight font-serif mb-2">
+              <span className="text-3xl sm:text-4xl lg:text-4xl xl:text-5xl font-light text-white tracking-tight font-serif mb-3 leading-none md:leading-tight">
                 {stat.value}
               </span>
-              <h2 className="text-sm font-semibold text-slate-200 uppercase tracking-widest mb-1">
-                {stat.label}
-              </h2>
-              <p className="text-sm text-slate-400">
-                {stat.sub}
-              </p>
+              <div>
+                <h2 className="text-xs sm:text-sm font-semibold text-slate-200 uppercase tracking-widest mb-1">
+                  {stat.label}
+                </h2>
+                <p className="text-sm text-slate-400">
+                  {stat.sub}
+                </p>
+              </div>
             </div>
           ))}
         </div>
