@@ -26,13 +26,17 @@ export const DisclaimerBanner: React.FC<DisclaimerBannerProps & { variant?: "lig
 
   if (!isVisible) return null;
 
-  const containerStyles = "bg-amber-100/95 backdrop-blur-sm border border-amber-300 text-amber-950 px-4 sm:px-5 py-3 sm:py-4 rounded-xl shadow-sm mb-8 w-full max-w-4xl";
-  const iconStyles = "text-amber-700";
-  const btnStyles = "hover:bg-amber-200 text-amber-800 hover:text-amber-950";
+  const containerStyles = variant === "light"
+    ? "bg-amber-100/95 backdrop-blur-sm border border-amber-300 text-amber-950 px-4 sm:px-5 py-3 sm:py-4 rounded-xl shadow-sm mb-8 w-full"
+    : "bg-slate-800/80 backdrop-blur-sm border-b border-slate-700 text-slate-200 px-4 sm:px-5 py-3 sm:py-4 shadow-sm w-full rounded-none mb-0";
+  const iconStyles = variant === "light" ? "text-amber-700" : "text-amber-400";
+  const btnStyles = variant === "light" 
+    ? "hover:bg-amber-200 text-amber-800 hover:text-amber-950"
+    : "hover:bg-slate-700 text-slate-400 hover:text-white";
 
   return (
     <div className={containerStyles}>
-      <div className="flex items-start sm:items-center justify-between gap-3 sm:gap-4">
+      <div className="max-w-7xl mx-auto flex items-start sm:items-center justify-between gap-3 sm:gap-4 w-full">
         <div className="flex items-start sm:items-center gap-3 sm:gap-4 flex-1 min-w-0 text-base font-medium">
           <AlertTriangle className={`w-5 h-5 sm:w-6 sm:h-6 shrink-0 mt-0.5 sm:mt-0 ${iconStyles}`} strokeWidth={2.5} />
           <p className="leading-relaxed flex-1">
